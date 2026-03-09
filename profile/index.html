@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Profile</title>
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- 메인 스타일 (1단계 위) -->
+    <link rel="stylesheet" href="../style.css">
+    <!-- 프로필 전용 스타일 -->
+    <link rel="stylesheet" href="profile_style.css">
+</head>
+<body>
+
+    <!-- 1. 상단 검은색 배경 (돔 형태) -->
+    <div class="profile-header-bg"></div>
+
+    <!-- 2. 메인 컨텐츠 래퍼 -->
+    <div class="profile-wrapper">
+
+        <!-- X 장식 (좌측 상단 3개) -->
+        <div class="deco-group-left">
+            <img src="../assets/deco_x_blue.png" class="deco-x">
+            <div class="deco-group-left1"><img src="../assets/deco_x_blue.png" class="deco-x"></div>
+            <div class="deco-group-left2"><img src="../assets/deco_x_blue.png" class="deco-x"></div>
+        </div>
+
+        <!-- X 장식 (우측 하단 2개) -->
+        <div class="deco-group-right">
+            <img src="../assets/deco_x_blue.png" class="deco-x">
+            <img src="../assets/deco_x_blue.png" class="deco-x">
+        </div>
+
+        <!-- 프로필 사진 -->
+        <div class="profile-img-box">
+            <!-- 프로필 이미지 경로 (상위 assets 폴더 사용 가정) -->
+            <img src="../assets/profile.jpg" alt="Patohsi Profile">
+        </div>
+
+        <!-- 파란색 소개 박스 -->
+        <div class="intro-box">
+            <p>
+                안녕하세요 patohsi 입니다.<br>
+                게임, 일러스트 등 프리로 활동중에 있습니다.
+            </p>
+        </div>
+
+        <!-- 사용 가능 툴 섹션 -->
+        <div class="tools-section">
+            <h2 class="section-title">사용 가능 툴</h2>
+            
+             <div class="tools-list"> 
+                <!-- 긴 아이콘 (Unreal, CSP) -->
+                <img src="assets/tool_unreal.png" alt="Unreal Engine" class="tool-banner" onerror="this.style.background='#000'">
+                <img src="assets/tool_csp.png" alt="Clip Studio Paint" class="tool-banner" onerror="this.style.background='#eee'">
+
+                <!-- 정사각형 아이콘 그리드 (1행) -->
+                <div class="tool-grid-row">
+                    <img src="assets/tool_speedtree.png" alt="SpeedTree" class="tool-square">
+                    <img src="assets/tool_c4d.png" alt="Cinema 4D" class="tool-square">
+                    <!-- 빈칸 (이미지상 빈칸이 있음) -->
+                    <div class="tool-square" style="visibility: hidden;"></div>
+                </div>
+
+                <!-- 정사각형 아이콘 그리드 (2행) -->
+                <div class="tool-grid-row">
+                    <img src="assets/tool_substance.png" alt="Substance Painter" class="tool-square">
+                    <img src="assets/tool_gaea.png" alt="Gaea" class="tool-square">
+                    <img src="assets/tool_recap.png" alt="realcpa" class="tool-square">
+                </div>
+
+                <!-- 정사각형 아이콘 그리드 (3행) -->
+                <div class="tool-grid-row">
+                    <img src="assets/tool_marmoset.png" alt="Marmoset" class="tool-square">
+                    <img src="assets/tool_blender.png" alt="Blender" class="tool-square">
+                    <img src="assets/tool_vs.png" alt="Visual Studio" class="tool-square">
+                </div>
+            </div>
+        </div>
+
+        <!-- SNS 아이콘 (하단 2줄) -->
+        <div class="sns-section">
+            <div class="sns-row">
+                <a href="https://x.com/aoiusagi_cm"><img src="../assets/sns_x.png" alt="X" class="sns-icon"></a>
+                <a href="https://www.pixiv.net/users/21872516"><img src="../assets/sns_pixiv.png" alt="Pixiv" class="sns-icon"></a> <!-- Pixiv 아이콘 필요 -->
+            </div>
+            <div class="sns-row">
+                <a href="https://www.instagram.com/patohsi/"><img src="../assets/sns_insta.png" alt="Instagram" class="sns-icon"></a>
+                <a href="https://github.com/patohsh"><img src="../assets/sns_git.png" alt="GitHub" class="sns-icon"></a>
+                <a href="https://www.youtube.com/@patohsi"><img src="../assets/sns_yt.png" alt="YouTube" class="sns-icon"></a>
+                <a href="https://chzzk.naver.com/06f6cd2ed13530ef395e67344156e514"><img src="../assets/sns_z.png" alt="z" class="sns-icon"></a> <!-- Zbrush/Artstation 등 -->
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 스크롤 탑 버튼 -->
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../assets/top_btn.png" class="top-btn-img">
+    </div>
+
+    <!-- 하단 네비게이션 (색반전 클래스 'inverted-nav' 적용) -->
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <!-- SVG -->
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <!-- 별 아이콘 -->
+                <img src="../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+
+            <!-- 링크 리스트 -->
+            <ul class="nav-links">
+                <li class="nav-item"><a href="index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../portfolio/index.html">PORTFOLIO</a></li>
+
+                <!-- 중앙 PATOHSI 홈 버튼 -->
+                <li class="nav-item center-home">
+                    <a href="../index.html" class="home-link-text">PATOHSI</a>
+                </li>
+
+                <li class="nav-item"><a href="../blog/index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 프로필 전용 JS -->
+    <script src="profile_script.js"></script>
+</body>
+</html>

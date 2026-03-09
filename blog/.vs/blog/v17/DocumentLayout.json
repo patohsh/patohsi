@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\\uC6F9\uC0AC\uC774\uD2B8\\patohsi\\blog\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\\uC6F9\uC0AC\uC774\uD2B8\\patohsi\\blog\\post\\2025\\unreal\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:post\\2025\\unreal\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.html",
+              "DocumentMoniker": "D:\\\uC6F9\uC0AC\uC774\uD2B8\\patohsi\\blog\\post\\2025\\unreal\\index.html",
+              "RelativeDocumentMoniker": "post\\2025\\unreal\\index.html",
+              "ToolTip": "D:\\\uC6F9\uC0AC\uC774\uD2B8\\patohsi\\blog\\post\\2025\\unreal\\index.html",
+              "RelativeToolTip": "post\\2025\\unreal\\index.html",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAD8AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-12-30T15:14:33.024Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

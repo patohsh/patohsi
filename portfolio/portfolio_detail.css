@@ -1,0 +1,139 @@
+﻿/* --- 기본 설정 --- */
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 0;
+    padding-bottom: 150px; /* 네비게이션 공간 */
+}
+
+/* --- 상세 페이지 레이아웃 --- */
+.detail-container {
+    width: 100%;
+    min-height: 80vh; /* 화면 중앙 정렬을 위해 최소 높이 확보 */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* 수직 중앙 정렬 */
+    padding: 100px 50px;
+    box-sizing: border-box;
+}
+
+/* 내부 래퍼 (이미지 + 텍스트) */
+.detail-wrapper {
+    display: flex;
+    flex-direction: row; /* 가로 배치 */
+    align-items: center; /* 텍스트 수직 중앙 정렬 */
+    justify-content: center;
+    gap: 80px; /* 이미지와 텍스트 사이 간격 */
+    max-width: 1400px;
+    width: 100%;
+}
+
+/* --- 이미지 영역 (비율 유지 핵심) --- */
+.detail-image-box {
+    flex: 1; /* 공간 차지 비율 */
+    display: flex;
+    justify-content: center; /* 이미지를 텍스트 쪽으로 붙임 */
+}
+
+.detail-img {
+    /* 너비는 자동으로 하되 최대값 제한 */
+    max-width: 100%;
+    width: auto;
+    /* 높이도 자동으로 하되 화면을 넘지 않게 제한 */
+    height: auto;
+    max-height: 80vh;
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* 부드러운 그림자 */
+    object-fit: contain; /* 비율 유지 */
+}
+
+/* --- 텍스트 영역 --- */
+.detail-text-box {
+    flex: 1; /* 공간 차지 비율 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    max-width: 500px; /* 텍스트가 너무 퍼지지 않게 제한 */
+}
+
+.detail-title {
+    font-family: 'Fredoka One', cursive; /* 혹은 명조체 계열 */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.detail-date {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 40px;
+    font-weight: 500;
+}
+
+.detail-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+    white-space: pre-line; /* 줄바꿈 적용 */
+}
+
+/* [추가] 중간 사이즈 화면(노트북 등) 대응 */
+@media (max-width: 1200px) {
+    .detail-wrapper {
+        gap: 80px; /* 화면이 좁아지면 간격도 자연스럽게 줄임 */
+    }
+}
+/* --- 반응형 (모바일) --- */
+@media (max-width: 900px) {
+    .detail-wrapper {
+        flex-direction: column; /* 세로 배치로 변경 */
+        gap: 40px;
+        text-align: center;
+    }
+
+    .detail-image-box {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .detail-img {
+        max-height: 50vh; /* 모바일에선 이미지 높이 제한 줄임 */
+    }
+
+    .detail-text-box {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/* --- 네비게이션 반전 (검은색 테마) --- */
+.inverted-nav .nav-bar {
+    background-color: #000 !important;
+}
+
+.inverted-nav .bump-svg path {
+    fill: #000 !important;
+}
+
+.inverted-nav .nav-links a {
+    color: #fff !important;
+}
+
+    .inverted-nav .nav-links a:hover {
+        color: #ff4da6 !important;
+    }
+
+.inverted-nav .home-link-text {
+    color: #fff !important;
+}
+
+.inverted-nav .nav-glow {
+    background: radial-gradient(ellipse at center, rgba(80, 80, 80, 0.5) 0%, transparent 70%);
+}
+
+#scroll-top-btn {
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}

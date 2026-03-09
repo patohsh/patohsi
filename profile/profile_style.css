@@ -1,0 +1,244 @@
+﻿/* --- 기본 설정 --- */
+body {
+    background-color: #fff;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding-bottom: 150px; /* 네비게이션 공간 */
+    margin: 0;
+}
+
+/* --- 상단 검은색 배경 (아래로 둥근 돔 형태) --- */
+.profile-header-bg {
+    background-color: #000;
+    width: 100%;
+    height: 400px; /* 검은 영역 높이 */
+    /* 아래쪽을 둥글게 (Convex) */
+    border-bottom-left-radius: 50% 150px;
+    border-bottom-right-radius: 50% 150px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* --- 메인 컨텐츠 래퍼 --- */
+.profile-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 600px; /* 모바일/태블릿 친화적 너비 */
+    margin: 0 auto;
+    padding-top: 250px; /* 프로필 사진 위치 잡기 위해 상단 여백 */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- X 장식 (파란색) --- */
+.deco-x {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    /* 정방향 (회전 없음) - 필요시 transform: rotate(45deg) 추가 */
+}
+
+/* 좌측 상단 (3개 세로 배치) - 검은 배경과 흰 배경 경계쯤 */
+.deco-group-left {
+    position: absolute;
+    top: 200px;
+    left: -200px; /* 래퍼 기준 왼쪽 바깥 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.deco-group-left1 {
+    position: absolute;
+    top: 120px;
+    left: 0px; /* 래퍼 기준 왼쪽 바깥 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.deco-group-left2 {
+    position: absolute;
+    top: 240px;
+    left: 0px; /* 래퍼 기준 왼쪽 바깥 */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* 우측 하단 (2개 세로 배치) */
+.deco-group-right {
+    position: absolute;
+    bottom: 50px;
+    right: -100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* --- 프로필 사진 --- */
+.profile-img-box {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    /* 흰색 테두리 없음 (이미지 참고) */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    background: #000; /* 이미지 없을 때 배경 */
+}
+
+    .profile-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+/* --- 파란색 소개 박스 --- */
+.intro-box {
+    background-color: #a1c4fd; /* 연한 파랑 */
+    color: #fff;
+    width: 100%;
+    padding: 30px 20px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 5px 15px rgba(161, 196, 253, 0.4);
+}
+
+    .intro-box p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+        font-weight: 500;
+    }
+
+/* --- 사용 가능 툴 섹션 --- */
+.tools-section {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #000;
+    text-align: left; /* 제목 왼쪽 정렬 */
+    padding-left: 20%;
+}
+.tools-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 자식 요소들을 가로축 기준 중앙으로 정렬 */
+    gap: 15px;
+    width: 100%;
+}
+
+/* 긴 배너형 아이콘 (Unreal, CSP) */
+.tool-banner {
+    width: 100%;
+    height: 60px;
+    object-fit: contain; /* 비율 유지하며 안에 맞춤 */
+    border-radius: 10px;
+    /* 배경색이 필요하다면 추가, 이미지가 꽉 차면 불필요 */
+    /* border: 1px solid #eee; */
+}
+/* 정사각형 아이콘 그리드 */
+.tool-grid-row {
+    display: grid;
+    /* 1fr(비율)을 유지하되, 전체 그리드의 최대 너비를 제한하여 크기 조절 */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; /* 박스 사이 간격 */
+    width: 62%; /* 전체 화면 대비 그리드 영역의 너비 (이 수치로 크기 조절) */
+    max-width: 400px; /* 너무 커지지 않게 마지노선 정하기 */
+    margin: 0 auto; /* 그리드 자체를 중앙으로 보냄 */
+}
+
+.tool-square {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 15px;
+    background-color: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* --- SNS 아이콘 (하단 2줄) --- */
+.sns-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 2px;
+    width: 1%;
+    align-items: center;
+}
+
+.sns-row {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+.sns-icon {
+    width: 80px;   /* 원하는 크기로 조절 */
+    height: auto;
+    object-fit: contain;
+    /* 검은색 아이콘으로 보이게 (이미지가 검은색이면 생략 가능) */
+}
+
+    .sns-icon:hover {
+        transform: translateY(-3px);
+    }
+
+
+/* --- [중요] 네비게이션 색상 반전 (검은색 테마) --- */
+.inverted-nav .nav-bar {
+    background-color: #000 !important;
+}
+
+.inverted-nav .bump-svg path {
+    fill: #000 !important;
+}
+
+.inverted-nav .nav-links a {
+    color: #fff !important;
+}
+
+    .inverted-nav .nav-links a:hover {
+        color: #ff4da6 !important;
+    }
+
+.inverted-nav .home-link-text {
+    color: #fff !important;
+}
+
+.inverted-nav .nav-glow {
+    background: radial-gradient(ellipse at center, rgba(80, 80, 80, 0.5) 0%, transparent 70%);
+}
+
+#scroll-top-btn {
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+
+/* --- 반응형 (장식 위치 조정) --- */
+@media (max-width: 850px) {
+    .deco-group-left {
+        left: 10px;
+        top: 280px;
+    }
+
+    .deco-group-right {
+        right: 10px;
+        bottom: 0;
+    }
+
+    .profile-wrapper {
+        width: 90%;
+    }
+}

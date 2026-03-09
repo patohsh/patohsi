@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Commission</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="commission_style.css">
+</head>
+<body>
+
+    <!-- 장식 요소들 (기존 유지) -->
+    <div class="deco-x-group deco-left">
+        <img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x">
+    </div>
+    <div class="deco-x-group deco-right">
+        <img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x"><img src="../assets/deco_x_blue.png" class="deco-x">
+    </div>
+
+    <div class="commission-container">
+
+        <!-- 언어 전환 버튼 -->
+        <div class="lang-switch-container">
+            <button class="lang-btn active" onclick="setLanguage('ko')">KR</button>
+            <span class="lang-divider"> </span>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <!-- 1. 헤더 영역 -->
+        <header class="header-area">
+            <span class="small-label">FAQ</span>
+            <h1 class="page-title lang-text" data-ko="커미션" data-en="COMMISSION">커미션</h1>
+
+            <!-- [수정] 버튼 제거하고 검은색 텍스트 링크로 변경 -->
+            <a class="guide-link lang-text" data-ko="가이드" data-en="Guide">가이드</a>
+
+            <p class="contact-info">
+                conect - x(DM) : patohsi / aoiusagi1203@gmail.com
+            </p>
+        </header>
+
+        <!-- 2. 가격표 & 샘플 -->
+        <section class="price-sample-section">
+            <div class="price-list">
+                <!-- 일반 항목: 점 있음 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="두상" data-en="Headshot">두상</span></span>
+                    <span class="item-price">15,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="상반신" data-en="Half Body">상반신</span></span>
+                    <span class="item-price">30,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="하반신" data-en="Thigh Up">하반신</span></span>
+                    <span class="item-price">40,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="전신" data-en="Full Body">전신</span></span>
+                    <span class="item-price">80,000</span>
+                </div>
+
+                <!-- [수정] + 항목: 점(dot) 제거 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="green-text lang-text" data-ko="+ 배경" data-en="+ BG">+ 배경</span></span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="green-text lang-text" data-ko="+ 인원추가" data-en="+ Add Person">+ 인원추가</span></span>
+                    <span class="item-price">+ A</span>
+                </div>
+
+                <!-- 일반 항목: 점 있음 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="자유 리퀘스트" data-en="Free Request">자유 리퀘스트</span></span>
+                    <span class="item-price">50,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="SD (개당)" data-en="SD (Each)">SD (개당)</span></span>
+                    <span class="item-price">10,000</span>
+                </div>
+            </div>
+
+            <div class="sample-box">
+                <img src="assets/sample_big.jpg" alt="Sample Art" class="sample-img" onerror="this.src='https://via.placeholder.com/400x600'">
+            </div>
+        </section>
+
+
+        <!-- 3. 흑백 삽화 섹션 -->
+        <section class="bw-section">
+            <h2 class="section-title lang-text" data-ko="흑백 삽화" data-en="B&W Illustration">흑백 삽화</h2>
+            <!-- [수정] 제목 아래 회색 라인 -->
+            <div class="bw-divider"></div>
+
+            <div class="bw-grid">
+                <!-- 일반 항목: 점 있음 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="상반신" data-en="Half Body">상반신</span></span>
+                    <span class="item-price">20,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="하반신" data-en="Thigh Up">하반신</span></span>
+                    <span class="item-price">30,000</span>
+                </div>
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="전신" data-en="Full Body">전신</span></span>
+                    <span class="item-price">50,000</span>
+                </div>
+            </div>
+
+            <br>
+
+            <div class="bw-grid">
+                <!-- 일반 항목: 점 있음 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="컬러 삽화" data-en="Color Illus">컬러 삽화</span></span>
+                    <span class="item-price">+ 10,000</span>
+                </div>
+                <!-- 점 있음 -->
+                <div class="price-capsule">
+                    <span class="item-name"><span class="dot"></span><span class="green-text lang-text" data-ko="상업적 사용시" data-en="Commercial Use">상업적 사용시</span></span>
+                    <span class="item-price lang-text" data-ko="상담후" data-en="Consult">상담후</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. 타임라인 -->
+        <section class="timeline-container">
+            <h3 class="timeline-title lang-text" data-ko="작품별 걸리는 기간" data-en="Estimated Work Time">작품별 걸리는 기간</h3>
+
+            <!-- [수정] 점이 라인에 겹치도록 구조/CSS 조정 -->
+            <div class="timeline-graphic-new">
+                <!-- 텍스트 라벨 (위) -->
+                <div class="timeline-labels">
+                    <span>Sketch</span>
+                    <span>Rough</span>
+                    <span>Interim</span>
+                    <span>END</span>
+                </div>
+
+                <!-- 선과 점 (겹침) -->
+                <div class="line-dot-wrapper">
+                    <div class="timeline-line-base"></div> <!-- 파란 선 -->
+                    <!-- 점들 (absolute로 배치하여 선 위에 올림) -->
+                    <div class="dots-container">
+                        <span class="blue-dot"></span>
+                        <span class="blue-dot"></span>
+                        <span class="blue-dot"></span>
+                        <span class="blue-dot"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 설명 박스 (기존 유지) -->
+            <div class="step-boxes">
+                <div class="step-box">
+                    <span class="day-label">1 DAY</span>
+                    <span class="lang-text" data-ko="스케치, 상담" data-en="Sketch, Consult">스케치, 상담</span>
+                </div>
+                <div class="step-box">
+                    <span class="day-label">2 ~ 3 DAY</span>
+                    <span class="lang-text" data-ko="러프, 컬러체크" data-en="Rough, Color Check">러프, 컬러체크</span>
+                </div>
+                <div class="step-box">
+                    <span class="day-label">3 ~ 20 DAY</span>
+                    <span class="lang-text" data-ko="중간 확인" data-en="Interim Check">중간 확인</span>
+                </div>
+                <div class="step-box">
+                    <span class="day-label">7 DAY</span>
+                    <span class="lang-text" data-ko="완료" data-en="Complete">완료</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 나머지 (Pixiv, 결제, 네비게이션) 기존 유지 -->
+        <!-- ... -->
+        <div class="pixiv-btn-area">
+            <a href="#" class="pixiv-btn">Pixiv Request</a>
+        </div>
+
+        <section class="payment-section">
+            <h2 class="section-title lang-text" data-ko="결제 신청링크" data-en="Payment Link">결제 신청링크</h2>
+            <div class="payment-divider"></div>
+            <div class="payment-grid">
+                <div class="payment-col">
+                    <span class="payment-label">KR</span>
+                    <a href="#" class="payment-btn">kakao</a>
+                </div>
+                <div class="payment-col">
+                    <span class="payment-label">JP/CH/EN/etc...?</span>
+                    <a href="https://paypal.me/patohsi" class="payment-btn">Paypal</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 스크롤 탑 & 네비게이션 -->
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../assets/top_btn.png" class="top-btn-img">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../blog/index.html">BLOG</a></li>
+                <li class="nav-item"><a href="index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="commission_script.js"></script>
+</body>
+</html>

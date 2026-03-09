@@ -1,0 +1,85 @@
+﻿/* --- 포스트 페이지 기본 설정 --- */
+body {
+    background-color: #fff;
+    color: #333;
+    padding-bottom: 150px; /* 네비게이션 공간 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* --- 포스트 컨텐츠 레이아웃 --- */
+.post-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.post-main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 80px;
+    color: #000;
+}
+
+.post-section {
+    margin-bottom: 80px;
+}
+
+.post-image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    margin-bottom: 40px;
+    display: inline-block;
+}
+
+.post-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .post-text p {
+        margin-bottom: 10px;
+    }
+
+
+/* --- [중요] 네비게이션 색상 반전 (검은색 바 / 흰색 글씨) --- */
+
+/* 네비게이션 바 배경: 검은색 */
+.inverted-nav .nav-bar {
+    background-color: #000 !important;
+}
+
+/* SVG 솟아오른 부분 채우기: 검은색 */
+.inverted-nav .bump-svg path {
+    fill: #000 !important;
+}
+
+/* 링크 텍스트: 흰색 */
+.inverted-nav .nav-links a {
+    color: #fff !important;
+}
+
+    .inverted-nav .nav-links a:hover {
+        color: #ff4da6 !important; /* 호버 색상은 핑크 유지 */
+    }
+
+/* 중앙 Patohsi 텍스트: 흰색 */
+.inverted-nav .home-link-text {
+    color: #fff !important;
+}
+
+/* 배경 글로우 (선택사항: 어두운 배경에 맞게 조정) */
+.inverted-nav .nav-glow {
+    background: radial-gradient(ellipse at center, rgba(50, 50, 50, 0.5) 0%, transparent 70%);
+}
+
+/* 탑 버튼 그림자 (흰 배경이라 잘 보이게) */
+#scroll-top-btn {
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}

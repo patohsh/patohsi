@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Blog</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="svg-curve-top">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+            <path d="M0,200 L1440,200 L1440,200 C1440,200 1150,0 720,0 C290,0 0,200 0,200 Z" fill="#fff"></path>
+        </svg>
+    </div>
+
+    <div class="blog-white-section">
+
+        <!-- X 장식 (정방향) -->
+        <div class="deco-group top-right">
+            <img src="../assets/deco_x_blue.png" class="deco-x">
+                    <div class="deco-group top-right1"><img src="../assets/deco_x_blue.png" class="deco-x"></div>
+                    <div class="deco-group top-right2"><img src="../assets/deco_x_blue.png" class="deco-x"></div>
+        </div>
+        <div class="deco-group bottom-left">
+            <img src="../assets/deco_x_blue.png" class="deco-x">
+                    <div class="deco-group bottom-left1"><img src="../assets/deco_x_blue.png" class="deco-x"></div>
+        </div>
+
+        <div class="inner-content">
+            <!-- 언어 전환 버튼 -->
+            <div class="lang-switch-container">
+                <button class="lang-btn active" onclick="setLanguage('ko')">KR</button>
+                <span class="lang-divider">|</span>
+                <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+            </div>
+            <div class="header-area">
+                <div class="year-filter">
+                    <span class="year-text active" onclick="setFilter('all', 'year')">ALL</span>
+                    <span class="year-text" onclick="setFilter('2026', 'year')">2026</span>
+                    <span class="year-text" onclick="setFilter('2025', 'year')">2025</span>
+                </div>
+                <div class="thick-divider"></div>
+            </div>
+
+            <div class="blog-grid">
+
+                <!-- 왼쪽: 포스트 리스트 -->
+                <div class="post-column">
+
+                    <!-- 게시물 리스트 컨테이너 -->
+                    <div id="posts-container">
+                        <!-- href 경로 설명: 현재 파일 위치(post/) 기준으로 2025 폴더 -> unreal 폴더 -> lighting.html 파일로 이동 -->
+                        <!-- [2026] 게시물 1 -->
+                        <!-- Post 1 -->
+                        <div class="post-item" data-category="unreal" data-year="2026">
+                            <div class="post-year-blue">2026</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title"><span class="green-text lang-text" data-ko="가이아툴을 이용한 언리얼 맵 제작" data-en="Creating Unreal Maps with GAEA Tools">가이아툴을 이용한 언리얼 맵 제작</h4>
+                                    <span class="post-date">24/12/11</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 2  -->
+                        <div class="post-item" data-category="ui" data-year="2026">
+                            <div class="post-year-blue">2026</div>
+                            <a href="post/2025/3d/2026-02-04.html" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">게임 ui 만들기</h4>
+                                    <span class="post-date">24/11/05</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 3  -->
+                        <div class="post-item" data-category="3d" data-year="2026">
+                            <div class="post-year-blue">2026</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.png" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">언리얼을 이용한 HD2D 모델링</h4>
+                                    <span class="post-date">24/10/20</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 4 () -->
+                        <div class="post-item" data-category="unreal" data-year="2026">
+                            <div class="post-year-blue">2026</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">언리얼 블루프린트 S퀄리티 텍스쳐 혼합</h4>
+                                    <span class="post-date">24/09/15</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- [2025] 게시물 1 -->
+                        <div class="post-item" data-category="unreal" data-year="2025">
+                            <div class="post-year-blue">2025</div>
+                            <a href="post/2025/unreal/index.html" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">언리얼 기본적인 단축키 가이드</h4>
+                                    <span class="post-date">25/12/15</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 2 -->
+                        <div class="post-item" data-category="unreal" data-year="2025">
+                            <div class="post-year-blue">2025</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">ue 블루프린트 텍스쳐 머티리얼</h4>
+                                    <span class="post-date">25/02/10</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 3 -->
+                        <div class="post-item" data-category="3d" data-year="2025">
+                            <div class="post-year-blue">2025</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">마블러스와 블랜더, 기본 모델을 이용한 모델링</h4>
+                                    <span class="post-date">25/03/05</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Post 4 -->
+                        <div class="post-item" data-category="3d" data-year="2025">
+                            <div class="post-year-blue">2025</div>
+                            <a href="#" class="post-card">
+                                <img src="assets/post_thumb_1.jpg" alt="thumb" class="post-thumb">
+                                <div class="post-info">
+                                    <h4 class="post-title">리얼리티 캡쳐를 이용한 모델링 가이드</h4>
+                                    <span class="post-date">25/03/20</span>
+                                    <i class="fa-regular fa-circle-right arrow-icon"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div> <!-- posts-container 끝 -->
+                    <!-- ★ 페이지네이션 컨트롤 (버튼) ★ -->
+                    <div class="pagination-controls">
+                        <button id="prevBtn" class="page-arrow-btn" onclick="changePage(-1)">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+
+                        <!-- 페이지 번호 표시 (선택사항, 필요 없으면 제거 가능) -->
+                        <span id="pageIndicator">1</span>
+
+                        <button id="nextBtn" class="page-arrow-btn" onclick="changePage(1)">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- 오른쪽: 사이드바 -->
+                <aside class="sidebar-column">
+                    <div class="sidebar-buttons">
+                        <button class="side-btn" onclick="setFilter('unreal', 'category')">
+                            <img src="image/btn_unreal.png" alt="Unreal">
+                        </button>
+                        <button class="side-btn" onclick="setFilter('3d', 'category')">
+                            <img src="image/btn_3d.png" alt="3D Model">
+                        </button>
+                        <button class="side-btn" onclick="setFilter('ui', 'category')">
+                            <img src="image/btn_ui.png" alt="Game UI">
+                        </button>
+                        <button class="side-btn reset-btn" onclick="setFilter('all', 'category')">
+                            RESET
+                        </button>
+                    </div>
+
+                    <div class="info-gray-box">
+                        <h3>Patohsi's Archive</h3>
+                        <p>
+                            This is a personal archive for game development resources.<br><br>
+                            Feel free to explore Unreal Engine tips, 3D modeling workflows, and UI designs.
+                        </p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <div class="svg-curve-bottom">
+        <svg viewBox="0 0 1440 280" preserveAspectRatio="none">
+            <path d="M0,-1 L1440,-1 L1440,0 C1440,0 1150,280 720,280 C290,280 0,0 0,0 Z" fill="#fff"></path>
+        </svg>
+    </div>
+
+    <div class="black-footer-area"></div>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../assets/top_btn.png" class="top-btn-img">
+    </div>
+
+    <div class="bottom-nav-wrapper">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z" fill="#fff"></path>
+                </svg>
+                <img src="../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../index.html">PATOHSI</a></li>
+                <li class="nav-item"><a href="index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
