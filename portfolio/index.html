@@ -44,19 +44,32 @@
             <!-- 카테고리 버튼 -->
             <div class="category-filter">
                 <button class="cat-btn active" onclick="setFilter('all', 'category')">ALL</button>
-                <button class="cat-btn" onclick="setFilter('work', 'category')">WORK</button>
-                <button class="cat-btn" onclick="setFilter('original', 'category')">ORIGINAL</button>
-                <button class="cat-btn" onclick="setFilter('fanart', 'category')">FAN ART</button>
+                <button class="cat-btn" onclick="setFilter('art', 'category')">art</button>
+                <button class="cat-btn" onclick="setFilter('3D', 'category')">3D</button>
+                <button class="cat-btn" onclick="setFilter('unreal', 'category')">unreal</button>
+                <button class="cat-btn" onclick="setFilter('work', 'category')">work</button>
             </div>
         </div>
 
         <!-- 갤러리 그리드 컨테이너 -->
         <div class="gallery-wrapper">
             <div id="gallery-grid" class="gallery-grid">
+                <!-- === [2026년 데이터] === -->
+                <!-------------------------------------------------------------------------------------------------------------------------------->
+                <a href="2026/work_01.html" class="gallery-card" data-year="2026" data-category="art">
+                    <!-- 상단 탭 장식 -->
+                    <div class="card-tab"></div>
+                    <!-- 이미지 -->
+                    <div class="card-img-box">
+                        <img src="assets/2026/1.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <!-- 하단 날짜 -->
+                    <div class="card-date">2026.01.01</div>
+                </a>
 
                 <!-- === [2025년 데이터] === -->
                 <!-- Item 1 -->
-                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="fanart">
+                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="art">
                     <!-- 상단 탭 장식 -->
                     <div class="card-tab"></div>
                     <!-- 이미지 -->
@@ -68,7 +81,7 @@
                 </a>
 
                 <!-- Item 2 -->
-                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="fanart">
+                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2025/8.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
@@ -77,27 +90,63 @@
                 </a>
 
                 <!-- (테스트용 데이터 복사) -->
-                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="fanart">
+                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="art">
                     <div class="card-tab"></div>
-                    <div class="card-img-box"><img src="assets/2025/7.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/7.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
                     <div class="card-date">2025.07.15</div>
                 </a>
 
-                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="fanart">
+                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="art">
                     <div class="card-tab"></div>
-                    <div class="card-img-box"><img src="assets/2025/6.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/6.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
                     <div class="card-date">2025.06.10</div>
                 </a>
 
-                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="fanart"><div class="card-tab"></div><div class="card-img-box"><img src="assets/2025/5.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div><div class="card-date">2025.05.05</div></a>
-                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="fanart"><div class="card-tab"></div><div class="card-img-box"><img src="assets/2025/4.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div><div class="card-date">2025.04.01</div></a>
-                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="fanart"><div class="card-tab"></div><div class="card-img-box"><img src="assets/2025/3.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div><div class="card-date">2025.03.20</div></a>
-                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="fanart"><div class="card-tab"></div><div class="card-img-box"><img src="assets/2025/2.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div><div class="card-date">2025.02.15</div></a>
-                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="fanart"><div class="card-tab"></div><div class="card-img-box"><img src="assets/2025/1.jpg" onerror="this.src='https://via.placeholder.com/300x500'"></div><div class="card-date">2025.01.10</div></a>
+                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/5.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.05.05</div>
+                </a>
+                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/4.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.04.01</div>
+                </a>
+                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/3.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.03.20</div>
+                </a>
+                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/2.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.02.15</div>
+                </a>
+                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/1.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.01.10</div>
+                </a>
 
 
+
+                <!-------------------------------------------------------------------------------------------------------------------------------->
                 <!-- === [2024년 데이터] === -->
-                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/8.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Work'">
@@ -105,7 +154,7 @@
                     <div class="card-date">2024.12.25</div>
                 </a>
 
-                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
@@ -119,35 +168,35 @@
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
-                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
-                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
-                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
-                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/2.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
-                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="fanart">
+                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="art">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
                         <img src="assets/2024/1.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">

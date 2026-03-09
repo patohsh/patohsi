@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - HD2D 게임 프롭 제작 과정</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+
+    <article class="post-container">
+        <h1 class="post-main-title">HD2D 게임 프롭 제작 과정</h1>
+
+
+        <div class="post-section">
+            <div class="post-text">
+                <p><strong>소형 프롭</strong></p>
+
+                <img src="../../assets/2026/프롭제작0.jpg" alt="Post Image 1" class="post-image">
+                <p>프롭 제작 과정중 2D를 3D형태로 보이고 자연스러운 그림자, 쉐이더를 위해 구체의 x값을 축소후 뒷부분 절반을 날려 </p>
+                <p>) 형태의 프롭을 만들었습니다.</p>
+
+                <img src="../../assets/2026/프롭제작1.jpg" alt="Post Image 2" class="post-image">
+
+                <img src="../../assets/2026/프롭제작.jpg" alt="Post Image 3" class="post-image">
+
+                <img src="../../assets/2026/프롭_상점.jpg" alt="Post Image 3" class="post-image">
+
+                <p>이후 프롭의 머티리얼을 블루프린트로 간결하게 사용했습니다.</p>
+                <img src="../../assets/2026/프롭제작2.jpg" alt="Post Image 3" class="post-image">
+                <img src="../../assets/2026/프롭제작3MT.jpg" alt="Post Image 3" class="post-image">
+
+            </div>
+        </div>
+
+        <div class="post-section">
+            <div class="post-text">
+                <p><strong>중형 프롭</strong></p>
+                <p>직선적인 물체들은 BP를 사용해 조합하거나, blander를 사용해 만들었으며, </p>
+
+                <img src="../../assets/2026/프롭제작5.jpg" alt="Post Image 4" class="post-image">
+                <p>중요한 포인트는 해당 프로젝트는 2D 감성과 외각선이 매끈하지 않고 </p>
+                <p>시각적 안정감을 위해 평면 메쉬를 메인으로 사용했습니다.</p>
+
+                <img src="../../assets/2026/프롭제작7.jpg" alt="Post Image 5" class="post-image">
+
+                <img src="../../assets/2026/프롭제작9.jpg" alt="Post Image 6" class="post-image">
+
+                <img src="../../assets/2026/프롭제작10.jpg" alt="Post Image 7" class="post-image">
+
+            </div>
+        </div>
+
+        <div class="post-section">
+            <div class="post-text">
+                <p><strong>대형 프롭</strong></p>
+                <p>대형 프롭은 이미 만들어진 소형 프롭 단계에서 추출하여 제작을 했으나</p>
+                <img src="../../assets/2026/프롭제작4.jpg" alt="Post Image 8" class="post-image">
+
+                <p>초기 단계에서 소형 텍스쳐를 개별 텍스쳐로 만들었기에 아쉬운 부분이 있으나 이후 텍스쳐를 절약하기 위해 </p>
+                <p>재활용 하는 방향으로 사용했습니다. 그렇기에 언리얼 내부 BP를 사용하여 BP내부에서 조정했습니다.</p>
+
+                <img src="../../assets/2026/BP_mesh.jpg" alt="Post Image 8" class="post-image">
+
+                <img src="../../assets/2026/BP_mesh1.jpg" alt="Post Image 9" class="post-image">
+
+            </div>
+        </div>
+
+        <div class="post-section">
+            <div class="post-text">
+                <p><strong>wall과 PCG 활용</strong></p>
+                <p>기본적인 담장 wall은 BP에서 소형 프랍의 조합을 통해 만들었지만</p>
+                <img src="../../assets/2026/프롭제작14.jpg" alt="Post Image 8" class="post-image">
+
+                <p>pcg를 활용해 기존 블록형 머티리얼을 여러층으로 만들어 재활용 하여 수로 벽면을 만드는 방식으로 사용되었습니다. </p>
+
+                <img src="../../assets/2026/프롭제작11.jpg" alt="Post Image 8" class="post-image">
+
+                <img src="../../assets/2026/프롭제작12.jpg" alt="Post Image 9" class="post-image">
+                <img src="../../assets/2026/프롭제작13.jpg" alt="Post Image 9" class="post-image">
+
+            </div>
+        </div>
+
+    </article>
+
+    <!-- 스크롤 탑 버튼 -->
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img">
+    </div>
+
+
+    <!-- 하단 네비게이션 (클래스 'inverted-nav' 추가됨) -->
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+
+        <nav id="main-nav" class="nav-bar">
+            <!-- SVG -->
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <!-- 별 아이콘 -->
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+
+            <!-- 링크 리스트 (경로 3단계 위로 설정) -->
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- ★ 포스트 전용 JS (2단계 위: blog 폴더) -->
+    <script src="../../post_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Project Detail</title>
+
+    <!-- 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- 1. 메인 공통 CSS (2단계 위) -->
+    <link rel="stylesheet" href="../../style.css">
+
+    <!-- 2. 상세 페이지 전용 CSS (1단계 위: portfolio 폴더) -->
+    <link rel="stylesheet" href="../portfolio_detail.css">
+</head>
+<body>
+
+    <!-- 상세 컨텐츠 영역 -->
+    <div class="detail-container">
+        <div class="detail-wrapper">
+
+            <!-- 왼쪽: 이미지 영역 -->
+            <div class="detail-image-box">
+                <!--
+                   이미지 경로 예시:
+                   root/portfolio/assets/2025/image.jpg 를 불러올 경우
+                   -> ../assets/2025/image.jpg
+                -->
+                <img src="../assets/2025/1.jpg" alt="Artwork" class="detail-img" onerror="this.src='https://via.placeholder.com/600x800'">
+            </div>
+
+            <!-- 오른쪽: 텍스트 영역 -->
+            <div class="detail-text-box">
+                <h1 class="detail-title">ALGL No.1312</h1>
+                <p class="detail-date">2022/8</p>
+
+                <div class="detail-desc">
+                    이 그림은 ALGL1312 #8 REAL 입니다.
+                    <br><br>
+                    학교라는 컨셉을 바탕으로 제작된 작품으로,
+                    건물의 구조와 색감, 조명 등이 조화를 이루어
+                    현실적인 느낌을 줍니다.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- 스크롤 탑 버튼 (이미지: root/assets) -->
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img">
+    </div>
+
+
+    <!-- 하단 네비게이션 (색반전 클래스 inverted-nav) -->
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <!-- SVG -->
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <!-- 별 아이콘 -->
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+
+            <!-- 링크 리스트 (경로 2단계 위) -->
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../profile/index.html">PROFILE</a></li>
+
+                <!-- 포트폴리오 목록으로 돌아가기 (1단계 위) -->
+                <li class="nav-item"><a href="../index.html">PORTFOLIO</a></li>
+
+                <li class="nav-item center-home">
+                    <a href="../../index.html" class="home-link-text">PATOHSI</a>
+                </li>
+
+                <li class="nav-item"><a href="../../blog/index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 스크립트 -->
+    <script>
+        function toggleNav() {
+            document.getElementById('main-nav').classList.toggle('active');
+        }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        document.addEventListener('click', function (event) {
+            const navWrapper = document.querySelector('.bottom-nav-wrapper');
+            const navBar = document.getElementById('main-nav');
+            if (navWrapper && !navWrapper.contains(event.target) && navBar.classList.contains('active')) {
+                navBar.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
