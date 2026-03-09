@@ -1,43 +1,43 @@
-// --- Àü¿ª º¯¼ö ¼³Á¤ ---
-const itemsPerPage = 5; // ÆäÀÌÁö´ç 5°³
+// --- ì „ì—­ ë³€ìˆ˜ ì„¤ì • ---
+const itemsPerPage = 5; // í˜ì´ì§€ë‹¹ 5ê°œ
 let currentPage = 1;
 let currentCategory = 'all';
 let currentYear = 'all';
-let allPostElements = []; // ¸ğµç Æ÷½ºÆ® ¿ä¼Ò¸¦ ÀúÀåÇÒ ¹è¿­
+let allPostElements = []; // ëª¨ë“  í¬ìŠ¤íŠ¸ ìš”ì†Œë¥¼ ì €ì¥í•  ë°°ì—´
 
-// ÆäÀÌÁö ·Îµå ½Ã ÃÊ±âÈ­
+// í˜ì´ì§€ ë¡œë“œ ì‹œ ì´ˆê¸°í™”
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM¿¡¼­ ¸ğµç Æ÷½ºÆ® °¡Á®¿Í¼­ ¹è¿­·Î ÀúÀå
+    // DOMì—ì„œ ëª¨ë“  í¬ìŠ¤íŠ¸ ê°€ì ¸ì™€ì„œ ë°°ì—´ë¡œ ì €ì¥
     allPostElements = Array.from(document.querySelectorAll('.post-item'));
 
-    // ÃÊ±â ·»´õ¸µ
+    // ì´ˆê¸° ë Œë”ë§
     renderPosts();
 });
 
-// --- ÇÊÅÍ ¼³Á¤ ÇÔ¼ö ---
-// type: 'category' ¶Ç´Â 'year'
+// --- í•„í„° ì„¤ì • í•¨ìˆ˜ ---
+// type: 'category' ë˜ëŠ” 'year'
 function setFilter(value, type) {
     if (type === 'category') {
         currentCategory = value;
     } else if (type === 'year') {
         currentYear = value;
-        // ¿¬µµ ¹öÆ° ½ºÅ¸ÀÏ ¾÷µ¥ÀÌÆ®
+        // ì—°ë„ ë²„íŠ¼ ìŠ¤íƒ€ì¼ ì—…ë°ì´íŠ¸
         const yearBtns = document.querySelectorAll('.year-text');
         yearBtns.forEach(btn => btn.classList.remove('active'));
         const activeBtn = Array.from(yearBtns).find(b => b.textContent === value || (value === 'all' && b.textContent === 'ALL'));
         if (activeBtn) activeBtn.classList.add('active');
     }
 
-    // ÇÊÅÍ°¡ ¹Ù²î¸é 1ÆäÀÌÁö·Î ¸®¼ÂÇÏ°í ´Ù½Ã ·»´õ¸µ
+    // í•„í„°ê°€ ë°”ë€Œë©´ 1í˜ì´ì§€ë¡œ ë¦¬ì…‹í•˜ê³  ë‹¤ì‹œ ë Œë”ë§
     currentPage = 1;
     renderPosts();
 }
-// ¾ğ¾î ¼³Á¤ ÇÔ¼ö
+// ì–¸ì–´ ì„¤ì • í•¨ìˆ˜
 function setLanguage(lang) {
-    // 1. ¸ğµç lang-text Å¬·¡½º¸¦ °¡Áø ¿ä¼Ò Ã£±â
+    // 1. ëª¨ë“  lang-text í´ë˜ìŠ¤ë¥¼ ê°€ì§„ ìš”ì†Œ ì°¾ê¸°
     const elements = document.querySelectorAll('.lang-text');
 
-    // 2. °¢ ¿ä¼ÒÀÇ ÅØ½ºÆ®¸¦ ÇØ´ç ¾ğ¾îÀÇ data ¼Ó¼º °ªÀ¸·Î ±³Ã¼
+    // 2. ê° ìš”ì†Œì˜ í…ìŠ¤íŠ¸ë¥¼ í•´ë‹¹ ì–¸ì–´ì˜ data ì†ì„± ê°’ìœ¼ë¡œ êµì²´
     elements.forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
         if (text) {
@@ -45,7 +45,7 @@ function setLanguage(lang) {
         }
     });
 
-    // 3. ¹öÆ° ½ºÅ¸ÀÏ ¾÷µ¥ÀÌÆ®
+    // 3. ë²„íŠ¼ ìŠ¤íƒ€ì¼ ì—…ë°ì´íŠ¸
     const buttons = document.querySelectorAll('.lang-btn');
     buttons.forEach(btn => {
         if (btn.getAttribute('onclick').includes(`'${lang}'`)) {
@@ -55,9 +55,9 @@ function setLanguage(lang) {
         }
     });
 }
-// --- ÆäÀÌÁö º¯°æ ÇÔ¼ö (< > ¹öÆ° Å¬¸¯ ½Ã) ---
+// --- í˜ì´ì§€ ë³€ê²½ í•¨ìˆ˜ (< > ë²„íŠ¼ í´ë¦­ ì‹œ) ---
 function changePage(direction) {
-    // ÇÊÅÍ¸µµÈ ¸ñ·ÏÀÇ ÃÑ °³¼ö °è»ê ÇÊ¿ä
+    // í•„í„°ë§ëœ ëª©ë¡ì˜ ì´ ê°œìˆ˜ ê³„ì‚° í•„ìš”
     const filteredList = getFilteredPosts();
     const totalPages = Math.ceil(filteredList.length / itemsPerPage);
 
@@ -66,11 +66,11 @@ function changePage(direction) {
     if (nextPage >= 1 && nextPage <= totalPages) {
         currentPage = nextPage;
         renderPosts();
-        scrollToTop(); // ÆäÀÌÁö ³Ñ±â¸é ¸Ç À§·Î
+        scrollToTop(); // í˜ì´ì§€ ë„˜ê¸°ë©´ ë§¨ ìœ„ë¡œ
     }
 }
 
-// --- ÇöÀç ÇÊÅÍ Á¶°Ç¿¡ ¸Â´Â Æ÷½ºÆ®¸¸ ¹İÈ¯ÇÏ´Â ÇÔ¼ö ---
+// --- í˜„ì¬ í•„í„° ì¡°ê±´ì— ë§ëŠ” í¬ìŠ¤íŠ¸ë§Œ ë°˜í™˜í•˜ëŠ” í•¨ìˆ˜ ---
 function getFilteredPosts() {
     return allPostElements.filter(item => {
         const itemCat = item.dataset.category;
@@ -83,31 +83,31 @@ function getFilteredPosts() {
     });
 }
 
-// --- ½ÇÁ¦ È­¸é¿¡ ±×¸®´Â ÇÔ¼ö ---
+// --- ì‹¤ì œ í™”ë©´ì— ê·¸ë¦¬ëŠ” í•¨ìˆ˜ ---
 function renderPosts() {
-    // 1. ÇöÀç Á¶°Ç¿¡ ¸Â´Â ¸®½ºÆ® È®º¸
+    // 1. í˜„ì¬ ì¡°ê±´ì— ë§ëŠ” ë¦¬ìŠ¤íŠ¸ í™•ë³´
     const filteredList = getFilteredPosts();
 
-    // 2. ÀüÃ¼ Æ÷½ºÆ® ÀÏ´Ü ¼û±â±â
+    // 2. ì „ì²´ í¬ìŠ¤íŠ¸ ì¼ë‹¨ ìˆ¨ê¸°ê¸°
     allPostElements.forEach(item => {
         item.style.display = 'none';
     });
 
-    // 3. ÇöÀç ÆäÀÌÁö¿¡ ÇØ´çÇÏ´Â ÀÎµ¦½º °è»ê
+    // 3. í˜„ì¬ í˜ì´ì§€ì— í•´ë‹¹í•˜ëŠ” ì¸ë±ìŠ¤ ê³„ì‚°
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    // 4. ÇØ´ç ±¸°£ÀÇ Æ÷½ºÆ®¸¸ º¸ÀÌ±â
+    // 4. í•´ë‹¹ êµ¬ê°„ì˜ í¬ìŠ¤íŠ¸ë§Œ ë³´ì´ê¸°
     const pageItems = filteredList.slice(startIndex, endIndex);
     pageItems.forEach(item => {
         item.style.display = 'flex';
     });
 
-    // 5. ¹öÆ° »óÅÂ ¾÷µ¥ÀÌÆ®
+    // 5. ë²„íŠ¼ ìƒíƒœ ì—…ë°ì´íŠ¸
     updatePaginationButtons(filteredList.length);
 }
 
-// --- ÆäÀÌÁö³×ÀÌ¼Ç UI ¾÷µ¥ÀÌÆ® ---
+// --- í˜ì´ì§€ë„¤ì´ì…˜ UI ì—…ë°ì´íŠ¸ ---
 function updatePaginationButtons(totalItems) {
     const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -115,21 +115,21 @@ function updatePaginationButtons(totalItems) {
     const nextBtn = document.getElementById('nextBtn');
     const indicator = document.getElementById('pageIndicator');
 
-    // ÆäÀÌÁö Ç¥½Ã (¿¹: 1 / 2)
+    // í˜ì´ì§€ í‘œì‹œ (ì˜ˆ: 1 / 2)
     if (totalPages === 0) {
         indicator.textContent = "0";
     } else {
-        indicator.textContent = `${currentPage}`; // È¤Àº `${currentPage} / ${totalPages}`
+        indicator.textContent = `${currentPage}`; // í˜¹ì€ `${currentPage} / ${totalPages}`
     }
 
-    // ÀÌÀü ¹öÆ° È°¼º/ºñÈ°¼º
+    // ì´ì „ ë²„íŠ¼ í™œì„±/ë¹„í™œì„±
     if (currentPage === 1) {
         prevBtn.disabled = true;
     } else {
         prevBtn.disabled = false;
     }
 
-    // ´ÙÀ½ ¹öÆ° È°¼º/ºñÈ°¼º
+    // ë‹¤ìŒ ë²„íŠ¼ í™œì„±/ë¹„í™œì„±
     if (currentPage >= totalPages || totalPages === 0) {
         nextBtn.disabled = true;
     } else {
@@ -137,7 +137,7 @@ function updatePaginationButtons(totalItems) {
     }
 }
 
-// --- ±âÁ¸ ³×ºñ°ÔÀÌ¼Ç ¹× ±âÅ¸ ±â´É ---
+// --- ê¸°ì¡´ ë„¤ë¹„ê²Œì´ì…˜ ë° ê¸°íƒ€ ê¸°ëŠ¥ ---
 function toggleNav() {
     document.getElementById('main-nav').classList.toggle('active');
 }
