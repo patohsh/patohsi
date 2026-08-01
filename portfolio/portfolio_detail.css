@@ -46,6 +46,13 @@ body {
     border-radius: 20px; /* 둥근 모서리 */
     box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* 부드러운 그림자 */
     object-fit: contain; /* 비율 유지 */
+    cursor: zoom-in;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.detail-img:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 50px rgba(0,0,0,0.18);
 }
 
 /* --- 텍스트 영역 --- */
@@ -136,4 +143,62 @@ body {
 
 #scroll-top-btn {
     filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+}
+
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 3000;
+}
+
+.image-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: min(92vw, 1400px);
+    max-height: 90vh;
+    z-index: 1;
+}
+
+.lightbox-image {
+    display: block;
+    max-width: 100%;
+    max-height: 90vh;
+    border-radius: 18px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -14px;
+    right: -14px;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background: #fff;
+    color: #111;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+body.lightbox-open {
+    overflow: hidden;
 }

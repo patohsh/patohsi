@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Art Archive</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="portfolio_style.css">
+</head>
+<body>
+    <div class="deco-top-left">
+        <img src="../assets/deco_x_blue.png" class="deco-x" alt="">
+        <div class="deco-top-left1"><img src="../assets/deco_x_blue.png" class="deco-x" alt=""></div>
+        <div class="deco-top-left2"><img src="../assets/deco_x_blue.png" class="deco-x" alt=""></div>
+    </div>
+
+    <div class="deco-right-wall">
+        <img src="../assets/deco_x_blue.png" class="deco-x-half" alt="">
+        <div class="deco-right-wall1"><img src="../assets/deco_x_blue.png" class="deco-x-half" alt=""></div>
+        <div class="deco-right-wall2"><img src="../assets/deco_x_blue.png" class="deco-x-half" alt=""></div>
+    </div>
+
+    <div class="portfolio-container">
+        <header class="archive-header">
+            <p class="archive-kicker">ON-SITE ARCHIVE</p>
+            <div class="archive-header-row">
+                <div>
+                    <h1 class="archive-title">사이트 내부 포트폴리오</h1>
+                    <p class="archive-desc">카드 크기를 줄이고, 그림과 3D 작업을 빠르게 나눠서 볼 수 있게 정리했습니다.</p>
+                </div>
+                <a href="index.html" class="archive-home-link">포트폴리오 선택 페이지</a>
+            </div>
+        </header>
+
+        <div class="filter-section">
+            <div class="year-filter">
+                <button class="year-btn" data-filter="2026" onclick="setFilter('2026', 'year')">2026</button>
+                <button class="year-btn active" data-filter="2025" onclick="setFilter('2025', 'year')">2025</button>
+                <button class="year-btn" data-filter="2024" onclick="setFilter('2024', 'year')">2024</button>
+            </div>
+
+            <div class="focus-filter">
+                <button class="cat-btn focus-btn active" data-filter="art" onclick="setFilter('art', 'category')">그림</button>
+                <button class="cat-btn focus-btn" data-filter="3d" onclick="setFilter('3d', 'category')">3D</button>
+            </div>
+
+            <div class="category-filter">
+                <button class="cat-btn subtle-btn" data-filter="all" onclick="setFilter('all', 'category')">ALL</button>
+                <button class="cat-btn subtle-btn" data-filter="work" onclick="setFilter('work', 'category')">WORK</button>
+                <button class="cat-btn subtle-btn" data-filter="unreal" onclick="setFilter('unreal', 'category')">UNREAL</button>
+            </div>
+        </div>
+
+        <div class="gallery-wrapper">
+            <div id="gallery-grid" class="gallery-grid">
+                <a href="2026/work_01.html" class="gallery-card" data-year="2026" data-category="3d">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/1.jpg" alt="3D work" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2026.01.01</div>
+                </a>
+
+                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/9.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.09.05</div>
+                </a>
+
+                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/8.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.08.20</div>
+                </a>
+
+                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.07.15</div>
+                </a>
+
+                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/6.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.06.10</div>
+                </a>
+
+                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.05.05</div>
+                </a>
+
+                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.04.01</div>
+                </a>
+
+                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.03.20</div>
+                </a>
+
+                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/2.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.02.15</div>
+                </a>
+
+                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/1.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                    </div>
+                    <div class="card-date">2025.01.10</div>
+                </a>
+
+                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/8.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Work'">
+                    </div>
+                    <div class="card-date">2024.12.25</div>
+                </a>
+
+                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_06.html" class="gallery-card" data-year="2024" data-category="3d">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/6.jpg" alt="3D work" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+3D'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/2.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+
+                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="art">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/1.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                    </div>
+                    <div class="card-date">2024.11.11</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="pagination-controls">
+            <button id="prevBtn" class="page-arrow-btn" onclick="changePage(-1)">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button id="nextBtn" class="page-arrow-btn" onclick="changePage(1)">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../blog/index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="portfolio_script.js"></script>
+</body>
+</html>

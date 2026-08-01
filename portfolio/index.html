@@ -1,231 +1,64 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patohsi - Portfolio</title>
+    <title>Patohsi - Portfolio Hub</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- CSS 연결 -->
     <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="portfolio_style.css">
+    <link rel="stylesheet" href="portfolio_landing.css">
 </head>
 <body>
+    <div class="portfolio-hub">
+        <div class="hub-bg hub-bg-left"></div>
+        <div class="hub-bg hub-bg-right"></div>
 
-    <!-- 좌측 상단 장식 (X) -->
-    <div class="deco-top-left">
-        <img src="../assets/deco_x_blue.png" class="deco-x">
-        <div class='deco-top-left1'><img src="../assets/deco_x_blue.png" class="deco-x"></div>
-        <div class='deco-top-left2'><img src="../assets/deco_x_blue.png" class="deco-x"></div>
-    </div>
+        <main class="hub-card">
+            <p class="hub-kicker">PORTFOLIO</p>
+            <h1 class="hub-title">원하는 포트폴리오로 바로 이동</h1>
+            <p class="hub-copy">
+                아트 작업은 사이트 내부 아카이브로 연결하고,
+                개발 작업은 외부 페이지로 바로 이동하도록 구성했습니다.
+            </p>
 
-    <!-- 우측 벽 장식 (X 반절 잘림) -->
-    <div class="deco-right-wall">
-        <img src="../assets/deco_x_blue.png" class="deco-x-half">
-        <div class="deco-right-wall1"><img src="../assets/deco_x_blue.png" class="deco-x-half"></div>
-        <div class="deco-right-wall2"><img src="../assets/deco_x_blue.png" class="deco-x-half"></div>
-    </div>
+            <div class="hub-actions">
+                <a class="hub-link primary"
+                   href="art.html">
+                    <span class="hub-link-label">ART Archive</span>
+                    <span class="hub-link-desc">사이트 내부 작업 아카이브</span>
+                </a>
 
-    <div class="portfolio-container">
-
-        <!-- 필터 섹션 -->
-        <div class="filter-section">
-            <!-- 연도 버튼 (href 제거, JS로 제어) -->
-            <div class="year-filter">
-                <button class="year-btn" onclick="setFilter('2026', 'year')">2026</button>
-                <button class="year-btn active" onclick="setFilter('2025', 'year')">2025</button>
-                <button class="year-btn" onclick="setFilter('2024', 'year')">2024</button>
+                <a class="hub-link secondary"
+                   href="https://touhou-music-bot.onrender.com"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span class="hub-link-label">Discord Bot Page</span>
+                    <span class="hub-link-desc">디스코드 봇 페이지</span>
+                </a>
+                <a class="hub-link secondary"
+                   href="https://toramremote.netlify.app/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    <span class="hub-link-label">toram game Archive Page</span>
+                    <span class="hub-link-desc">토람 게임정보 정리 페이지</span>
+                </a>
             </div>
 
-            <!-- 카테고리 버튼 -->
-            <div class="category-filter">
-                <button class="cat-btn active" onclick="setFilter('all', 'category')">ALL</button>
-                <button class="cat-btn" onclick="setFilter('art', 'category')">art</button>
-                <button class="cat-btn" onclick="setFilter('3D', 'category')">3D</button>
-                <button class="cat-btn" onclick="setFilter('unreal', 'category')">unreal</button>
-                <button class="cat-btn" onclick="setFilter('work', 'category')">work</button>
+            <div class="archive-entry">
+                <span class="archive-label">ON-SITE ARCHIVE</span>
+                <a href="https://www.pixiv.net/users/21872516" class="archive-link">pixiv</a>
             </div>
-        </div>
-
-        <!-- 갤러리 그리드 컨테이너 -->
-        <div class="gallery-wrapper">
-            <div id="gallery-grid" class="gallery-grid">
-                <!-- === [2026년 데이터] === -->
-                <!-------------------------------------------------------------------------------------------------------------------------------->
-                <a href="2026/work_01.html" class="gallery-card" data-year="2026" data-category="art">
-                    <!-- 상단 탭 장식 -->
-                    <div class="card-tab"></div>
-                    <!-- 이미지 -->
-                    <div class="card-img-box">
-                        <img src="assets/2026/1.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <!-- 하단 날짜 -->
-                    <div class="card-date">2026.01.01</div>
-                </a>
-
-                <!-- === [2025년 데이터] === -->
-                <!-- Item 1 -->
-                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="art">
-                    <!-- 상단 탭 장식 -->
-                    <div class="card-tab"></div>
-                    <!-- 이미지 -->
-                    <div class="card-img-box">
-                        <img src="assets/2025/9.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <!-- 하단 날짜 -->
-                    <div class="card-date">2025.09.05</div>
-                </a>
-
-                <!-- Item 2 -->
-                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/8.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.08.20</div>
-                </a>
-
-                <!-- (테스트용 데이터 복사) -->
-                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/7.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.07.15</div>
-                </a>
-
-                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/6.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.06.10</div>
-                </a>
-
-                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/5.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.05.05</div>
-                </a>
-                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/4.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.04.01</div>
-                </a>
-                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/3.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.03.20</div>
-                </a>
-                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/2.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.02.15</div>
-                </a>
-                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2025/1.jpg" onerror="this.src='https://via.placeholder.com/300x500'">
-                    </div>
-                    <div class="card-date">2025.01.10</div>
-                </a>
-
-
-
-                <!-------------------------------------------------------------------------------------------------------------------------------->
-                <!-- === [2024년 데이터] === -->
-                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/8.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Work'">
-                    </div>
-                    <div class="card-date">2024.12.25</div>
-                </a>
-
-                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_06.html" class="gallery-card" data-year="2024" data-category="work">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/6.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/2.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="art">
-                    <div class="card-tab"></div>
-                    <div class="card-img-box">
-                        <img src="assets/2024/1.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
-                    </div>
-                    <div class="card-date">2024.11.11</div>
-                </a>
-                <!-- 필요한 만큼 2024 데이터 추가 -->
-
-            </div>
-        </div>
-
-        <!-- 페이지네이션 컨트롤 (< > 버튼) -->
-        <div class="pagination-controls">
-            <button id="prevBtn" class="page-arrow-btn" onclick="changePage(-1)">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button id="nextBtn" class="page-arrow-btn" onclick="changePage(1)">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
-
+        </main>
     </div>
 
-    <!-- 스크롤 탑 버튼 -->
     <div id="scroll-top-btn" onclick="scrollToTop()">
-        <img src="../assets/top_btn.png" class="top-btn-img">
+        <img src="../assets/top_btn.png" class="top-btn-img" alt="Top">
     </div>
 
-    <!-- 하단 네비게이션 (색반전) -->
     <div class="bottom-nav-wrapper inverted-nav">
         <div class="nav-glow"></div>
         <nav id="main-nav" class="nav-bar">
@@ -245,6 +78,6 @@
         </nav>
     </div>
 
-    <script src="portfolio_script.js"></script>
+    <script src="portfolio_landing.js"></script>
 </body>
 </html>

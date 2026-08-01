@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 언리얼 모델링과 캐릭터 세팅 메모</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+    <article class="post-container">
+        <h1 class="post-main-title">언리얼 모델링과 캐릭터 세팅 메모</h1>
+
+        <div class="post-section">
+            <div class="post-text">
+                <p>이 메모는 언리얼에서 직접 모델링하거나, 블렌더-마야-언리얼 캐릭터 파이프라인을 연결할 때 걸렸던 포인트를 정리한 기록입니다.</p>
+                <p>참고 링크는 [언리얼 모델링 라이브](https://www.youtube.com/live/apCSgAAkDTU?si=OQjbocjy6Plw7fkV), [몸통 분리 이펙트](https://youtu.be/g47tNmkVjlQ?si=c7bKb8JzYMJAzCXQ), [스켈레탈 에디터](https://www.youtube.com/live/qFq2mH6JfYM?si=u3WBm8xekD1xE_Od&t=2570), [헤어 노말 추출](https://www.youtube.com/watch?v=ngIjfrl2qH8) 등으로 이어집니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240716145136.png" alt="Source chain note" class="post-image">
+            <div class="post-text">
+                <p><strong>블렌더 - 마야 - 언리얼 연결</strong></p>
+                <p>메모상으로는 소스 체인 오류가 심했고, root와 hip 체인을 <strong>None</strong>으로 바꿔야 정상적인 움직임을 보이는 경우가 있었습니다.</p>
+                <p>기본적으로 마야를 거치는 쪽이 더 안정적이었고, [관련 사용법 영상](https://youtu.be/CKeFCKF00ss?si=YfrTsvdH0ksC58r9)을 기준으로 체인을 먼저 정리하는 흐름이 좋았습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240716145343.png" alt="IK rig note" class="post-image">
+            <div class="post-text">
+                <p>IK 리그에서는 타게팅보다 먼저 뼈대 체인 설정을 해줘야 했고, 메모에는 이 문제가 VRM 수정으로 해결된다고 적혀 있었습니다.</p>
+                <p>또한 힙의 translation을 <strong>absolute</strong>로 바꾸는 포인트가 따로 강조되어 있었습니다.</p>
+                <img src="../../assets/obsidian/Pasted image 20240725003454.png" alt="VRM fix note" class="post-image">
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240722225254.png" alt="Kawaii physics wiki" class="post-image">
+            <div class="post-text">
+                <p><strong>카와이 피직스</strong></p>
+                <p>카와이 피직스는 [개요 글](https://papersloth.hatenablog.com/entry/2024/02/14/201629), [실사용 영상](https://www.youtube.com/live/hlgXuVML_is?si=ytTT5zYLA_UCC2DU), [에픽 튜토리얼](https://dev.epicgames.com/community/learning/tutorials/d1Z9/unreal-engine-how-to-setup-kawaii-physics-in-unreal), [위키](https://github.com/pafuhana1213/KawaiiPhysics/wiki/)까지 같이 보는 흐름이 유효했습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240725021156.png" alt="5.4 bug note" class="post-image">
+            <div class="post-text">
+                <p>메모에서는 5.4 버그가 심해서 실제 작업은 5.3에서 진행하는 것이 낫다는 결론이 남아 있었습니다.</p>
+                <p>스켈레톤이 너무 큰 상태면 피직스가 고장났고, 웨이트가 넓게 퍼져 있으면 결과가 무너져 하나씩 지우고 다시 설정할 수밖에 없었습니다.</p>
+                <img src="../../assets/obsidian/Pasted image 20240728021024.png" alt="Weight issue" class="post-image">
+                <img src="../../assets/obsidian/Pasted image 20240728021051.png" alt="Physics problem result" class="post-image">
+                <img src="../../assets/obsidian/Pasted image 20240728020905.png" alt="Physics repaint fix" class="post-image">
+            </div>
+        </div>
+    </article>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../post_script.js"></script>
+</body>
+</html>

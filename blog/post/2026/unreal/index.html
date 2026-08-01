@@ -3,94 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patohsi - Post Title</title>
+    <title>Patohsi - 가이아툴을 이용한 언리얼 맵 제작</title>
 
-    <!-- 폰트 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- 메인 CSS (3단계 위) -->
     <link rel="stylesheet" href="../../../style.css">
-
-    <!-- ★ 포스트 전용 CSS (2단계 위: blog 폴더) -->
     <link rel="stylesheet" href="../../post_style.css">
 </head>
 <body>
-
-    <!-- 포스트 내용 -->
     <article class="post-container">
+        <h1 class="post-main-title">가이아툴을 이용한 언리얼 맵 제작</h1>
 
-        <h1 class="post-main-title">제목</h1>
-
-        <!-- 섹션 1 -->
         <div class="post-section">
-            <!-- 이미지 경로: 3단계 위 (../../assets/...) -->
-            <img src="../../assets/post_thumb_1.jpg" alt="Post Image 1" class="post-image">
-
+            <img src="../../assets/2026/landscape_MT.jpg" alt="Landscape setup" class="post-image">
             <div class="post-text">
-                <p>언리얼 엔진을 사용하여</p>
-                <br>
-                <p>설명 텍스트가 들어갑니다.</p>
-                <p>설명 텍스트가 들어갑니다.</p>
-                <p>설명 텍스트가 들어갑니다.</p>
+                <p>랜드스케이프를 처음 만들 때 가장 중요한 것은 텍스처 페인트용 기본 머티리얼을 먼저 준비하는 것입니다.</p>
+                <p>메모 기준으로는 머티리얼이 없는 상태에서 칠을 시작하면 텍스처가 무너지기 쉽고, 브러시 느낌을 내기 위해 wrap 설정을 놓치지 않는 것이 핵심이었습니다.</p>
+                <p>해상도는 8129 기준이 비교적 안정적이었고, 2x2 섹션과 64 컴포넌트 세팅을 기본값처럼 사용하는 쪽이 작업 흐름이 좋았습니다.</p>
             </div>
         </div>
 
-        <!-- 섹션 2 -->
         <div class="post-section">
-            <img src="../../assets/2025/post_thumb_1.jpg" alt="Post Image 2" class="post-image">
-
+            <img src="../../assets/2026/landscape_economized_MT.jpg" alt="Landscape workflow" class="post-image">
             <div class="post-text">
-                <p>모델링 작업을 진행하며</p>
-                <br>
-                <p>설명 텍스트가 들어갑니다.</p>
-                <p>설명 텍스트가 들어갑니다.</p>
-                <p>설명 텍스트가 들어갑니다.</p>
+                <p><strong>초기 세팅 메모</strong></p>
+                <p>신규 지형을 먼저 생성한 뒤 별도 임포트로 데이터를 넣는 방식이 안전했고, 월드 파티션 리전 크기는 8에서 16 사이가 관리하기 좋았습니다.</p>
+                <p>바닥 타일이 자연스럽게 뚫리거나 흙이 차오르는 표현은 브리지 텍스처 적용 방법과 깊이감 있는 텍스처 레이어링을 이해하면 훨씬 수월해집니다.</p>
+                <p>자연스러운 비포장 도로와 포장 도로는 따로 접근했고, 도로 제작은 나중에 PCG와 조합할 때 훨씬 유연했습니다.</p>
             </div>
         </div>
 
+        <div class="post-section">
+            <img src="../../assets/2026/landscape_MT1.jpg" alt="GAEA and PCG" class="post-image">
+            <div class="post-text">
+                <p><strong>디테일 단계</strong></p>
+                <p>GAEA와 UE 조합은 큰 지형의 방향을 잡을 때 유효했고, 이후 디테일은 PCG와 개별 메시에 맡기는 흐름이 효율적이었습니다.</p>
+                <p>메모에는 잔디 뭉텅이, 덩굴, 머티리얼을 비우는 길, 자갈 생성, 벽돌벽 파괴 같은 디테일 파트가 따로 정리되어 있었고, 이런 항목들은 후반 완성도를 크게 끌어올립니다.</p>
+                <p>마지막으로 스태틱 메시는 충돌 설정을 반드시 확인해야 실제 플레이에서 막힘과 반응이 정상적으로 동작합니다.</p>
+            </div>
+        </div>
     </article>
 
-
-    <!-- 스크롤 탑 버튼 -->
     <div id="scroll-top-btn" onclick="scrollToTop()">
-        <img src="../../assets/top_btn.png" class="top-btn-img">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
     </div>
 
-
-    <!-- 하단 네비게이션 (클래스 'inverted-nav' 추가됨) -->
     <div class="bottom-nav-wrapper inverted-nav">
         <div class="nav-glow"></div>
-
         <nav id="main-nav" class="nav-bar">
-            <!-- SVG -->
             <div class="nav-bump-svg-container" onclick="toggleNav()">
                 <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
                     <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
                 </svg>
-                <!-- 별 아이콘 -->
                 <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
             </div>
-
-            <!-- 링크 리스트 (경로 3단계 위로 설정) -->
             <ul class="nav-links">
                 <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
                 <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
-
-                <!-- 중앙 PATOHSI 홈 버튼 -->
-                <li class="nav-item center-home">
-                    <a href="../../../../index.html" class="home-link-text">PATOHSI</a>
-                </li>
-
-                <!-- 블로그 메인은 2단계 위 (../../index.html) -->
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
                 <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
                 <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
             </ul>
         </nav>
     </div>
 
-    <!-- ★ 포스트 전용 JS (2단계 위: blog 폴더) -->
     <script src="../../post_script.js"></script>
 </body>
 </html>
+

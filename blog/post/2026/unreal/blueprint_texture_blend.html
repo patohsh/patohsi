@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 언리얼 블루프린트 S퀄리티 텍스쳐 혼합</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+    <article class="post-container">
+        <h1 class="post-main-title">언리얼 블루프린트 S퀄리티 텍스쳐 혼합</h1>
+
+        <div class="post-section">
+            <img src="../../assets/2026/white_line.png" alt="Texture issue" class="post-image">
+            <div class="post-text">
+                <p>블루프린트에서 여러 텍스처를 섞어 사용할 때 가장 먼저 확인한 부분은 반복 경계와 흰 줄처럼 보이는 이음새였습니다.</p>
+                <p>문제는 텍스처 자체보다 UV와 샘플링 방식에서 생기는 경우가 많아, 머티리얼 단계보다 먼저 기준 데이터를 정리했습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/2026/white_line_solution.png" alt="Texture fix" class="post-image">
+            <div class="post-text">
+                <p><strong>해결 방식</strong></p>
+                <p>블루프린트에서 타일 밀도와 방향값을 분리해 제어하고, 가장자리 보정용 파라미터를 따로 두어 상황별로 빠르게 대응했습니다.</p>
+                <p>이 구조를 만들어 두면 동일한 머티리얼을 다른 프롭이나 바닥 메시에 재사용하기가 훨씬 쉬워집니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/2026/바닥_데칼MT.jpg" alt="Material result" class="post-image">
+            <div class="post-text">
+                <p>최종적으로는 데칼과 기본 텍스처가 겹쳐도 경계가 튀지 않도록 조정했고, 씬 전체 톤을 해치지 않는 범위에서 대비만 남겼습니다.</p>
+            </div>
+        </div>
+    </article>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../post_script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 마블러스 디자인 파이프라인</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+    <article class="post-container">
+        <h1 class="post-main-title">마블러스 디자인 파이프라인</h1>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240610200316.png" alt="Marvelous units note" class="post-image">
+            <div class="post-text">
+                <p>이 메모의 핵심은 단위와 출력 설정을 처음부터 고정하는 것입니다.</p>
+                <p>작업은 <strong>mm 기준</strong>, export 확인은 <strong>m 기준</strong>으로 보고, 실제 FBX는 <strong>cm로 출력</strong>해야 뒤 단계에서 꼬이지 않는다는 점이 반복해서 강조되어 있었습니다.</p>
+                <p>또한 파일 출력 시 모든 UV를 함께 뽑지 않으면 결과가 망가질 수 있다는 경고도 남아 있었습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240811232022.png" alt="Wrong export scale example" class="post-image">
+            <div class="post-text">
+                <p>m 기준으로 잘못 뽑았을 때 생기는 스케일 문제 예시도 포함되어 있었고, 이런 실수 하나가 이후 언리얼 리깅 단계까지 영향을 줍니다.</p>
+                <p>관련 보조 자료로는 [VRM 혼합 참고](https://youtu.be/fV2Dr5F445w?si=n1wg6xK0wfnEKu9V), [튜토리얼](https://youtu.be/bVDIwvXpFBk?si=XLqJ0HFIZ6BxJdWr), [주머니](https://youtu.be/q5KS0ZtInjE?si=tbH-qirR3QxL1lfH), [프릴 드레스](https://youtu.be/yq4HdW8p9gk?si=T89hDr-kWrYMKeh5) 등이 같이 메모되어 있었습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240623013308.png" alt="Marvelous export checklist" class="post-image">
+            <div class="post-text">
+                <p><strong>정리된 파이프라인</strong></p>
+                <p>마블러스 단계에서는 모든 UV, cm FBX, 단일 메시, 두께 옵션을 체크하고, 이후 블렌더에서 VRM 임포트, 스컬핑, 메시 수정, UV 수정, 스켈레탈 메쉬 수정을 거친 뒤 FBX로 다시 익스포트합니다.</p>
+                <img src="../../assets/obsidian/Pasted image 20240623013337.png" alt="Marvelous export options" class="post-image">
+                <p>그 다음 서브스턴스 디자이너에서 텍스처를 수정하고 노멀맵을 재계산한 뒤, 블렌더에서 VRM과 옷 파일을 혼합해 최종 출력하는 순서였습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240704202025.png" alt="Merged texture issue" class="post-image">
+            <div class="post-text">
+                <p><strong>버그 픽스 메모</strong></p>
+                <p>OBJ는 비교적 성공적이었지만 FBX는 오류가 많았고, 사소한 실수 하나가 전체 파이프라인을 무너뜨릴 수 있다는 점이 강하게 남아 있었습니다.</p>
+                <p>의상과 합쳤을 때 본과 텍스처가 통합되는 문제, 레거시 모델 수정 필요, export 시 Apply Transform 체크 같은 항목들이 실제로는 가장 자주 틀리는 부분이었습니다.</p>
+                <img src="../../assets/obsidian/Pasted image 20240716125932.png" alt="Legacy model note" class="post-image">
+                <img src="../../assets/obsidian/Pasted image 20240716130050.png" alt="Apply transform note" class="post-image">
+                <img src="../../assets/obsidian/Pasted image 20240716141401.png" alt="Export bad example" class="post-image">
+                <img src="../../assets/obsidian/Pasted image 20240716141420.png" alt="Export result warning" class="post-image">
+            </div>
+        </div>
+    </article>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../post_script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+.commission-apply-container {
+    max-width: 980px;
+}
+
+.apply-header {
+    margin-bottom: 48px;
+}
+
+.apply-lead {
+    max-width: 760px;
+    margin: 24px auto 0;
+    line-height: 1.8;
+    color: #4f4f4f;
+}
+
+.back-to-commission {
+    display: inline-block;
+    margin-top: 22px;
+    color: #111;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid #304ffe;
+    padding-bottom: 3px;
+}
+
+.apply-method-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    margin-bottom: 42px;
+}
+
+.apply-card,
+.confirm-box {
+    background: #fff;
+    border: 1px solid #dfe3f5;
+    border-radius: 26px;
+    padding: 30px;
+    box-shadow: 0 16px 40px rgba(18, 18, 18, 0.08);
+    text-align: left;
+}
+
+.apply-card-label {
+    display: inline-block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: #304ffe;
+    margin-bottom: 14px;
+}
+
+.apply-card-title,
+.confirm-title {
+    font-size: 1.6rem;
+    margin: 0 0 14px;
+    color: #111;
+}
+
+.apply-card-copy,
+.confirm-copy {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 24px;
+}
+
+.apply-action-btn,
+.unlock-payment-btn,
+.commission-apply-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 54px;
+    padding: 0 26px;
+    border-radius: 14px;
+    border: 0;
+    background: #304ffe;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(48, 79, 254, 0.22);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.apply-action-btn:hover,
+.unlock-payment-btn:hover,
+.commission-apply-btn:hover {
+    transform: translateY(-2px);
+    background: #2539c5;
+}
+
+.apply-action-btn.secondary {
+    background: #111;
+    box-shadow: 0 10px 20px rgba(17, 17, 17, 0.16);
+}
+
+.apply-action-btn.secondary:hover {
+    background: #2d2d2d;
+}
+
+.apply-confirm-section {
+    margin-bottom: 38px;
+}
+
+.payment-reveal.is-hidden {
+    display: none;
+}
+
+.payment-reveal {
+    animation: fadeUp 0.35s ease;
+}
+
+.apply-entry-section {
+    margin-bottom: 50px;
+}
+
+.apply-entry-copy {
+    max-width: 720px;
+    margin: 0 auto 28px;
+    line-height: 1.8;
+    color: #555;
+}
+
+.apply-entry-action {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .apply-method-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .apply-card,
+    .confirm-box {
+        padding: 24px 20px;
+    }
+}

@@ -1,16 +1,12 @@
-﻿/* --- 기본 설정 --- */
 body {
     background-color: #fff;
     color: #333;
     font-family: 'Noto Sans KR', sans-serif;
     padding-bottom: 150px;
     margin: 0;
-    overflow-x: hidden; /* 우측 장식 잘림 처리를 위해 */
+    overflow-x: hidden;
 }
 
-/* --- 장식 요소 --- */
-
-/* 좌측 상단 파란색 X */
 .deco-top-left {
     position: absolute;
     top: 5px;
@@ -18,12 +14,14 @@ body {
     display: flex;
     gap: 10px;
 }
+
 .deco-top-left1 {
     position: absolute;
     left: 100px;
     display: flex;
     gap: 10px;
 }
+
 .deco-top-left2 {
     position: absolute;
     left: 200px;
@@ -37,63 +35,104 @@ body {
     object-fit: contain;
 }
 
-/* 우측 벽 장식 (X 반절 잘림) */
 .deco-right-wall {
-    position: fixed; /* 스크롤 무관하게 벽에 고정 */
+    position: fixed;
     top: 60%;
     right: 0;
-    transform: translateY(-50%); /* 수직 중앙 정렬 */
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 1px;
     z-index: 0;
 }
+
 .deco-right-wall1 {
-    position: fixed; /* 스크롤 무관하게 벽에 고정 */
+    position: fixed;
     top: 120%;
     right: 0;
-    transform: translateY(-50%); /* 수직 중앙 정렬 */
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 1px;
     z-index: 0;
 }
+
 .deco-right-wall2 {
-    position: fixed; /* 스크롤 무관하게 벽에 고정 */
+    position: fixed;
     top: 190%;
     right: 0;
-    transform: translateY(-50%); /* 수직 중앙 정렬 */
+    transform: translateY(-50%);
     display: flex;
     flex-direction: column;
     gap: 1px;
     z-index: 0;
 }
-/* 이미지를 오른쪽으로 이동시켜 반만 보이게 함 */
+
 .deco-x-half {
     width: 160px;
     height: 160px;
     object-fit: contain;
-    transform: translateX(50%); /* 오른쪽으로 50% 이동 -> 반 잘림 효과 */
+    transform: translateX(50%);
 }
 
-
-/* --- 메인 컨테이너 --- */
 .portfolio-container {
-    max-width: 1400px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 150px 50px 50px;
+    padding: 130px 40px 50px;
     position: relative;
     z-index: 1;
 }
 
-/* --- 필터 섹션 --- */
+.archive-header {
+    margin-bottom: 42px;
+}
+
+.archive-kicker {
+    font-family: 'Fredoka One', cursive;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: #5488d5;
+    margin-bottom: 14px;
+}
+
+.archive-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.archive-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.05;
+    color: #111;
+    margin-bottom: 10px;
+}
+
+.archive-desc {
+    color: #5a5a5a;
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+.archive-home-link {
+    text-decoration: none;
+    color: #111;
+    font-weight: 700;
+    white-space: nowrap;
+    padding: 12px 18px;
+    border-radius: 999px;
+    border: 1px solid #e8d2b7;
+    background: rgba(242, 207, 165, 0.25);
+}
+
 .filter-section {
     margin-bottom: 50px;
 }
 
-/* 연도 버튼 */
 .year-filter {
     display: flex;
+    flex-wrap: wrap;
     gap: 15px;
     margin-bottom: 20px;
 }
@@ -110,15 +149,22 @@ body {
     transition: all 0.3s;
 }
 
-    .year-btn.active {
-        background-color: #f2cfa5; /* 살구색 */
-        border-color: #f2cfa5;
-        color: #000;
-    }
+.year-btn.active {
+    background-color: #f2cfa5;
+    border-color: #f2cfa5;
+    color: #000;
+}
 
-/* 카테고리 버튼 */
+.focus-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
 .category-filter {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
 }
 
@@ -135,82 +181,89 @@ body {
     transition: all 0.2s;
 }
 
-    .cat-btn.active, .cat-btn:hover {
-        background-color: #f2cfa5;
-        color: #fff;
-    }
-
-
-/* --- [핵심] 갤러리 그리드 (4열) --- */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px 20px; /* 세로 가로 간격 */
+.cat-btn.active,
+.cat-btn:hover {
+    background-color: #f2cfa5;
+    color: #fff;
 }
 
-/* --- [핵심] 카드 디자인 (살구색 배경 + 상단 탭) --- */
+.focus-btn {
+    min-width: 150px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    border-radius: 999px;
+    border-width: 2px;
+}
+
+.subtle-btn {
+    border-color: #eadfd0;
+    color: #6a6a6a;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
+    justify-content: center;
+    gap: 30px 18px;
+}
+
 .gallery-card {
     position: relative;
     display: flex;
     flex-direction: column;
-    background-color: #f2cfa5; /* 카드 배경 (살구색) */
-    padding: 10px 10px 40px 10px; /* 이미지를 감싸는 여백 + 하단 날짜 공간 */
-    border-radius: 10px; /* 전체 둥근 모서리 */
+    background-color: #f2cfa5;
+    padding: 8px 8px 36px 8px;
+    border-radius: 12px;
     text-decoration: none;
     transition: transform 0.3s;
-    margin-top: 15px; /* 상단 탭 공간 확보 */
+    margin-top: 15px;
+    width: 100%;
 }
 
-    .gallery-card:hover {
-        transform: translateY(-5px);
-    }
+.gallery-card:hover {
+    transform: translateY(-5px);
+}
 
-/* 상단 탭 (툭 튀어나온 부분) */
 .card-tab {
     position: absolute;
-    top: -12px; /* 카드 위로 올림 */
+    top: -12px;
     left: 50%;
     transform: translateX(-50%);
-    width: 30%; /* 탭 너비 */
+    width: 30%;
     height: 15px;
-    background-color: #e6b580; /* 카드보다 약간 진한 색 */
+    background-color: #e6b580;
     border-radius: 5px 5px 0 0;
     z-index: 0;
 }
 
-/* 이미지 박스 */
 .card-img-box {
     width: 100%;
-    /* 세로로 긴 비율 유지 */
     aspect-ratio: 3 / 5;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     position: relative;
     z-index: 1;
 }
 
-    .card-img-box img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+.card-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-/* 하단 날짜 */
 .card-date {
     position: absolute;
-    bottom: 10px; /* 패딩 안쪽에 배치 */
+    bottom: 10px;
     left: 0;
     width: 100%;
     text-align: center;
     font-family: 'Noto Sans KR', sans-serif;
     font-weight: 700;
-    font-size: 1rem;
+    font-size: 0.92rem;
     color: #000;
 }
 
-
-/* --- 페이지네이션 컨트롤 --- */
 .pagination-controls {
     display: flex;
     justify-content: center;
@@ -234,43 +287,16 @@ body {
     align-items: center;
 }
 
-    .page-arrow-btn:hover {
-        background-color: #f0f0f0;
-        border-color: #999;
-    }
-
-    .page-arrow-btn:disabled {
-        opacity: 0.3;
-        cursor: not-allowed;
-    }
-
-
-/* --- 반응형 --- */
-@media (max-width: 1200px) {
-    .gallery-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+.page-arrow-btn:hover {
+    background-color: #f0f0f0;
+    border-color: #999;
 }
 
-@media (max-width: 900px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .deco-right-wall {
-        display: none;
-    }
-    /* 모바일에서 장식 숨김 */
+.page-arrow-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
 }
 
-@media (max-width: 600px) {
-    .gallery-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-
-/* --- 네비게이션 반전 --- */
 .inverted-nav .nav-bar {
     background-color: #000 !important;
 }
@@ -283,9 +309,9 @@ body {
     color: #fff !important;
 }
 
-    .inverted-nav .nav-links a:hover {
-        color: #ff4da6 !important;
-    }
+.inverted-nav .nav-links a:hover {
+    color: #ff4da6 !important;
+}
 
 .inverted-nav .home-link-text {
     color: #fff !important;
@@ -296,5 +322,43 @@ body {
 }
 
 #scroll-top-btn {
-    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.2));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+}
+
+@media (max-width: 900px) {
+    .portfolio-container {
+        padding: 110px 22px 40px;
+    }
+
+    .archive-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .deco-right-wall {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 24px 14px;
+    }
+
+    .year-btn {
+        padding: 9px 20px;
+        font-size: 1.1rem;
+    }
+
+    .focus-btn {
+        min-width: 0;
+        flex: 1;
+    }
+}
+
+@media (max-width: 420px) {
+    .gallery-grid {
+        grid-template-columns: repeat(1, minmax(0, 220px));
+    }
 }

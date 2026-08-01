@@ -1,67 +1,71 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Patohsi - ㅂㅂ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 게임 UI 만들기</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../post_style.css">
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
 </head>
 <body>
+    <article class="post-container">
+        <h1 class="post-main-title">게임 UI 만들기</h1>
 
-<article class="post-container">
-<h1 class="post-main-title">ㅂㅂ</h1>
-
-
-<div class="post-section">
-        <div class="post-text">
-<p>ㅁㄴㅇㅁㄴㅇ</p>
-
+        <div class="post-section">
+            <img src="../../assets/2025/nomo.png" alt="UI concept" class="post-image">
+            <div class="post-text">
+                <p>이 작업은 게임 화면에서 가장 먼저 보이는 정보 구조를 정리하는 것부터 시작했습니다.</p>
+                <p>아이콘, 버튼, 상태창을 한 번에 화려하게 넣기보다는 플레이 중 필요한 정보가 어디에 배치되어야 하는지 먼저 정리했습니다.</p>
+            </div>
         </div>
-</div>
 
-<div class="post-section">
-        <div class="post-text">
-<p><strong>ㅁㄴㅇㅁㄴㅇ</strong></p>
-
-            <img src="../../assets/2025/post_thumb_1.jpg" alt="Post Image 1" class="post-image">
-            
+        <div class="post-section">
+            <img src="../../assets/2025/rina.png" alt="UI layout" class="post-image">
+            <div class="post-text">
+                <p><strong>핵심 포인트</strong></p>
+                <p>시선 흐름은 좌상단에서 우하단으로 자연스럽게 이어지도록 잡고, 주요 버튼은 캐릭터 실루엣을 가리지 않게 배치했습니다.</p>
+                <p>텍스트는 시안 단계부터 실제 게임처럼 길어질 수 있다고 가정하고 여백을 넉넉하게 두었습니다.</p>
+            </div>
         </div>
-</div>
 
-<div class="post-section">
-        <div class="post-text">
-
-            <img src="../../assets/2025/post_thumb_2.jpg" alt="Post Image 2" class="post-image">
-            <p>ㅁㄴㅇㅁㄴㅇㅁㄴㅇ</p>
-
+        <div class="post-section">
+            <img src="../../assets/2025/1.png" alt="UI notes" class="post-image">
+            <div class="post-text">
+                <p>최종 단계에서는 컬러 대비와 버튼 크기를 다시 조정해 마우스 이동 동선을 줄였습니다.</p>
+                <p>이후 작업에서는 애니메이션과 인터랙션 상태까지 붙여 실제 사용감에 더 가깝게 다듬을 예정입니다.</p>
+            </div>
         </div>
-</div>
+    </article>
 
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
 
-</article>
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
 
-<div id="scroll-top-btn" onclick="scrollToTop()">
-<img src="../../assets/top_btn.png" class="top-btn-img">
-</div>
-
-<div class="bottom-nav-wrapper inverted-nav">
-<nav id="main-nav" class="nav-bar">
-<ul class="nav-links">
-<li><a href="../../../profile/index.html">PROFILE</a></li>
-<li><a href="../../../portfolio/index.html">PORTFOLIO</a></li>
-<li><a href="../../../index.html">PATOHSI</a></li>
-<li><a href="../../../index.html">BLOG</a></li>
-<li><a href="../../../commission/index.html">COMMISSION</a></li>
-</ul>
-</nav>
-</div>
-
-<script src="../../post_script.js"></script>
+    <script src="../../post_script.js"></script>
 </body>
 </html>
+

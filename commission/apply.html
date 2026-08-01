@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - Commission Apply</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="commission_style.css">
+    <link rel="stylesheet" href="commission_apply.css">
+</head>
+<body>
+    <div class="deco-x-group deco-left">
+        <img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt="">
+    </div>
+    <div class="deco-x-group deco-right">
+        <img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt=""><img src="../assets/deco_x_blue.png" class="deco-x" alt="">
+    </div>
+
+    <div class="commission-container commission-apply-container">
+        <div class="lang-switch-container">
+            <button class="lang-btn active" onclick="setLanguage('ko')">KR</button>
+            <span class="lang-divider"> </span>
+            <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        </div>
+
+        <header class="header-area apply-header">
+            <span class="small-label">APPLY</span>
+            <h1 class="page-title lang-text" data-ko="커미션 신청 페이지" data-en="Commission Application">커미션 신청 페이지</h1>
+            <p class="apply-lead lang-text"
+               data-ko="신청 방식 선택 -> 메일 전송 -> 결제 진행 순서입니다. 메일을 보낸 뒤 아래 확인 버튼을 눌러 결제 링크를 열어 주세요."
+               data-en="Choose an application method -> send your email -> proceed to payment. After sending your email, use the confirmation button below to unlock payment.">
+                신청 방식 선택 -> 메일 전송 -> 결제 진행 순서입니다. 메일을 보낸 뒤 아래 확인 버튼을 눌러 결제 링크를 열어 주세요.
+            </p>
+            <a href="index.html" class="back-to-commission lang-text" data-ko="커미션 메인으로 돌아가기" data-en="Back to Commission">커미션 메인으로 돌아가기</a>
+        </header>
+
+        <section class="apply-method-grid">
+            <article class="apply-card">
+                <span class="apply-card-label">OPTION 01</span>
+                <h2 class="apply-card-title lang-text" data-ko="픽시브 신청" data-en="Pixiv Request">픽시브 신청</h2>
+                <p class="apply-card-copy lang-text"
+                   data-ko="픽시브 리퀘스트를 선호하는 경우 이쪽으로 이동해 신청해 주세요. 신청 후 아래 확인 버튼을 눌러 결제 링크를 확인할 수 있습니다."
+                   data-en="If you prefer Pixiv Request, use this route first. After your request is sent, confirm below to open the payment links.">
+                    픽시브 리퀘스트를 선호하는 경우 이쪽으로 이동해 신청해 주세요. 신청 후 아래 확인 버튼을 눌러 결제 링크를 확인할 수 있습니다.
+                </p>
+                <a href="#" class="apply-action-btn" target="_blank" rel="noopener noreferrer">Pixiv Request</a>
+            </article>
+
+            <article class="apply-card">
+                <span class="apply-card-label">OPTION 02</span>
+                <h2 class="apply-card-title lang-text" data-ko="직접 신청 메일 보내기" data-en="Direct Email Request">직접 신청 메일 보내기</h2>
+                <p class="apply-card-copy lang-text"
+                   data-ko="아래 버튼을 누르면 메일 앱이 열립니다. 제목과 신청 내용을 적어 보낸 뒤, 결제 안내를 위해 아래 확인 버튼을 눌러 주세요."
+                   data-en="The button below opens your mail app. Send your request with subject and details first, then use the confirmation button to unlock payment.">
+                    아래 버튼을 누르면 메일 앱이 열립니다. 제목과 신청 내용을 적어 보낸 뒤, 결제 안내를 위해 아래 확인 버튼을 눌러 주세요.
+                </p>
+                <a
+                    href="mailto:aoiusagi1203@gmail.com?subject=%5BCommission%5D%20Application&body=Name%3A%0AContact%3A%0ARequest%20Type%3A%0ACharacter%20Info%3A%0ADeadline%3A%0AReferences%3A%0AAdditional%20Notes%3A"
+                    class="apply-action-btn secondary lang-text"
+                    data-ko="메일로 직접 신청하기"
+                    data-en="Apply by Email"
+                >
+                    메일로 직접 신청하기
+                </a>
+            </article>
+        </section>
+
+        <section class="apply-confirm-section">
+            <div class="confirm-box">
+                <h2 class="confirm-title lang-text" data-ko="메일 전송 후 결제 열기" data-en="Unlock Payment After Email">메일 전송 후 결제 열기</h2>
+                <p class="confirm-copy lang-text"
+                   data-ko="신청 메일 또는 픽시브 신청을 먼저 끝낸 뒤 아래 버튼을 눌러 주세요. 서버 검증은 없으므로, 실제 신청 후에만 진행하는 흐름으로 사용하면 됩니다."
+                   data-en="Finish your email or Pixiv request first, then use the button below. There is no server-side verification, so use it only after your actual request is sent.">
+                    신청 메일 또는 픽시브 신청을 먼저 끝낸 뒤 아래 버튼을 눌러 주세요. 서버 검증은 없으므로, 실제 신청 후에만 진행하는 흐름으로 사용하면 됩니다.
+                </p>
+                <button type="button" class="unlock-payment-btn lang-text" data-ko="메일을 보냈습니다" data-en="I Sent My Request" onclick="unlockPayment()">메일을 보냈습니다</button>
+            </div>
+        </section>
+
+        <section id="paymentReveal" class="payment-section payment-reveal is-hidden">
+            <h2 class="section-title lang-text" data-ko="결제 진행" data-en="Proceed to Payment">결제 진행</h2>
+            <div class="payment-divider"></div>
+            <div class="payment-grid">
+                <div class="payment-col">
+                    <span class="payment-label">KR</span>
+                    <a href="#" class="payment-btn">Kakao</a>
+                </div>
+                <div class="payment-col">
+                    <span class="payment-label">JP / CH / EN / etc.</span>
+                    <a href="https://paypal.me/patohsi" class="payment-btn" target="_blank" rel="noopener noreferrer">Paypal</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../blog/index.html">BLOG</a></li>
+                <li class="nav-item"><a href="index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="commission_script.js"></script>
+    <script src="commission_apply.js"></script>
+</body>
+</html>

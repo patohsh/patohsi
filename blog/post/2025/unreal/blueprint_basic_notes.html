@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 블루 프린트 기본 메모</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+    <article class="post-container">
+        <h1 class="post-main-title">블루 프린트 기본 메모</h1>
+
+        <div class="post-section">
+            <img src="../../assets/obsidian/Pasted image 20240730233408.png" alt="Blueprint memo screenshot" class="post-image">
+            <div class="post-text">
+                <p>짧은 메모였지만 실무에서는 바로 써먹을 수 있는 내용이었습니다.</p>
+                <p>블루프린트나 에셋 테스트 중 텍스처 스트리밍 문제가 의심될 때, 임시방편으로 <code>r.streaming.poolsize 0</code> 값을 써서 스트리밍 풀 제한을 풀어 확인하는 기록이 남아 있었습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <div class="post-text">
+                <p>이 값은 근본 해결이 아니라 원인 범위를 좁히기 위한 확인용 메모에 가깝습니다.</p>
+                <p>실제 프로젝트에서는 텍스처 크기, 메모리 사용량, 스트리밍 설정을 함께 점검해야 하고, 이 명령어는 증상 확인용으로만 사용하는 편이 안전합니다.</p>
+            </div>
+        </div>
+    </article>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../post_script.js"></script>
+</body>
+</html>

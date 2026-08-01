@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patohsi - 리얼리티 캡쳐를 이용한 모델링 가이드</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../../../style.css">
+    <link rel="stylesheet" href="../../post_style.css">
+</head>
+<body>
+    <article class="post-container">
+        <h1 class="post-main-title">리얼리티 캡쳐를 이용한 모델링 가이드</h1>
+
+        <div class="post-section">
+            <img src="../../assets/2025/3d_scan.png" alt="3D scan" class="post-image">
+            <div class="post-text">
+                <p>리얼리티 캡쳐 기반 작업은 촬영 단계에서 절반 이상이 결정됩니다.</p>
+                <p>빛이 많이 흔들리거나 표면 정보가 부족하면 후처리에서 해결하는 비용이 크게 늘어나기 때문에, 촬영 간격과 겹침 비율을 먼저 안정적으로 맞췄습니다.</p>
+            </div>
+        </div>
+
+        <div class="post-section">
+            <img src="../../assets/2026/리얼스켄.jpg" alt="Reality capture result" class="post-image">
+            <div class="post-text">
+                <p>스캔 후에는 원본 메시를 그대로 쓰지 않고 필요한 형태만 남겨 게임용 메시로 다시 정리했습니다.</p>
+                <p>표면 디테일은 텍스처와 노멀에서 살리고, 메시 구조는 실제 배치와 충돌 처리를 고려해 단순화하는 흐름이 가장 안정적이었습니다.</p>
+            </div>
+        </div>
+    </article>
+
+    <div id="scroll-top-btn" onclick="scrollToTop()">
+        <img src="../../assets/top_btn.png" class="top-btn-img" alt="Top">
+    </div>
+
+    <div class="bottom-nav-wrapper inverted-nav">
+        <div class="nav-glow"></div>
+        <nav id="main-nav" class="nav-bar">
+            <div class="nav-bump-svg-container" onclick="toggleNav()">
+                <svg viewBox="0 0 400 60" preserveAspectRatio="none" class="bump-svg">
+                    <path d="M0,60 L110,60 Q140,60 150,40 L160,15 Q165,0 185,0 L215,0 Q235,0 240,15 L250,40 Q260,60 290,60 L400,60 Z"></path>
+                </svg>
+                <img src="../../assets/star_icon.png" alt="Toggle" class="trigger-icon">
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="../../../../profile/index.html">PROFILE</a></li>
+                <li class="nav-item"><a href="../../../../portfolio/index.html">PORTFOLIO</a></li>
+                <li class="nav-item center-home"><a href="../../../../index.html" class="home-link-text">PATOHSI</a></li>
+                <li class="nav-item"><a href="../../../index.html">BLOG</a></li>
+                <li class="nav-item"><a href="../../../../commission/index.html">COMMISSION</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="../../post_script.js"></script>
+</body>
+</html>
+

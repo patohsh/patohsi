@@ -74,7 +74,7 @@
                 <li class="nav-item"><a href="../../profile/index.html">PROFILE</a></li>
 
                 <!-- 포트폴리오 목록으로 돌아가기 (1단계 위) -->
-                <li class="nav-item"><a href="../index.html">PORTFOLIO</a></li>
+                <li class="nav-item"><a href="../art.html">PORTFOLIO</a></li>
 
                 <li class="nav-item center-home">
                     <a href="../../index.html" class="home-link-text">PATOHSI</a>
@@ -87,20 +87,9 @@
     </div>
 
     <!-- 스크립트 -->
-    <script>
-        function toggleNav() {
-            document.getElementById('main-nav').classList.toggle('active');
-        }
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-        document.addEventListener('click', function (event) {
-            const navWrapper = document.querySelector('.bottom-nav-wrapper');
-            const navBar = document.getElementById('main-nav');
-            if (navWrapper && !navWrapper.contains(event.target) && navBar.classList.contains('active')) {
-                navBar.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="../portfolio_detail.js"></script>
 </body>
 </html>
+
+
+
