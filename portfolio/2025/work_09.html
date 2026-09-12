@@ -11,12 +11,18 @@
 
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../portfolio_detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <a href="../art.html" class="detail-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> 목록으로
+    </a>
+
     <div class="detail-container">
         <div class="detail-wrapper">
             <div class="detail-image-box">
-                <img src="../assets/2025/9.jpg" alt="Artwork" class="detail-img" onerror="this.src='https://via.placeholder.com/600x800'">
+                <img src="../assets/2025/9.jpg" alt="Artwork" class="detail-img" onerror="this.onerror=null;this.removeAttribute('src');this.classList.add('no-image')">
             </div>
 
             <div class="detail-text-box">

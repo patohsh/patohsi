@@ -7,7 +7,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="stylesheet" href="../style.css">
@@ -41,178 +41,421 @@
         <div class="filter-section">
             <div class="year-filter">
                 <button class="year-btn" data-filter="2026" onclick="setFilter('2026', 'year')">2026</button>
-                <button class="year-btn active" data-filter="2025" onclick="setFilter('2025', 'year')">2025</button>
+                <button class="year-btn" data-filter="2025" onclick="setFilter('2025', 'year')">2025</button>
                 <button class="year-btn" data-filter="2024" onclick="setFilter('2024', 'year')">2024</button>
             </div>
 
-            <div class="focus-filter">
-                <button class="cat-btn focus-btn active" data-filter="art" onclick="setFilter('art', 'category')">그림</button>
-                <button class="cat-btn focus-btn" data-filter="3d" onclick="setFilter('3d', 'category')">3D</button>
-            </div>
+            <div class="filter-row">
+                <div class="focus-filter">
+                    <button class="cat-btn focus-btn" lang="ko" data-filter="art" onclick="setFilter('art', 'category')">그림</button>
+                    <button class="cat-btn focus-btn" data-filter="3d" onclick="setFilter('3d', 'category')">3D</button>
+                </div>
 
-            <div class="category-filter">
-                <button class="cat-btn subtle-btn" data-filter="all" onclick="setFilter('all', 'category')">ALL</button>
-                <button class="cat-btn subtle-btn" data-filter="work" onclick="setFilter('work', 'category')">WORK</button>
-                <button class="cat-btn subtle-btn" data-filter="unreal" onclick="setFilter('unreal', 'category')">UNREAL</button>
+                <div class="category-filter">
+                    <button class="cat-btn subtle-btn active" data-filter="all" onclick="setFilter('all', 'category')">ALL</button>
+                    <button class="cat-btn subtle-btn" data-filter="work" onclick="setFilter('work', 'category')">WORK</button>
+                    <button class="cat-btn subtle-btn" data-filter="unreal" onclick="setFilter('unreal', 'category')">UNREAL</button>
+                    <button class="cat-btn subtle-btn" lang="ko" data-filter="booth" onclick="setFilter('booth', 'category')">부스</button>
+                </div>
+
+                <div class="view-toggle">
+                    <button id="viewMasonryBtn" class="view-btn" onclick="setViewMode('masonry')">
+                        <i class="fa-solid fa-images"></i> 모아보기
+                    </button>
+                    <button id="viewGridBtn" class="view-btn active" onclick="setViewMode('grid')">
+                        <i class="fa-solid fa-table-cells"></i> 목록보기
+                    </button>
+                </div>
             </div>
         </div>
 
         <div class="gallery-wrapper">
-            <div id="gallery-grid" class="gallery-grid">
-                <a href="2026/work_01.html" class="gallery-card" data-year="2026" data-category="3d">
+            <div id="gallery-grid" class="gallery-grid view-grid">
+                <a href="2026/work_20.html" class="gallery-card" data-year="2026" data-category="3d" data-title="동양풍 부스 3D 소품 모음">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2026/1.jpg" alt="3D work" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2026/20-1.jpg" alt="동양풍 부스 3D 소품 모음" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
-                    <div class="card-date">2026.01.01</div>
+                    <div class="card-date">2026.09.12</div>
                 </a>
 
-                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2026/work_19.html" class="gallery-card" data-year="2026" data-category="3d" data-title="캐릭터 의상 3D 모델링">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/9.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2026/19-2.jpg" alt="캐릭터 의상 3D 모델링" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.09.12</div>
+                </a>
+
+                <a href="2026/work_18.html" class="gallery-card" data-year="2026" data-category="3d" data-title="배경 소품 3D 모델링">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/18.jpg" alt="배경 소품 3D 모델링" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.09.12</div>
+                </a>
+
+                <a href="2026/work_01.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 06">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/1.jpg" alt="Artwork 06" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.05</div>
+                </a>
+
+                <a href="2026/work_02.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 14">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/2.jpg" alt="Artwork 14" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.08</div>
+                </a>
+
+                <a href="2026/work_03.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 12">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/3.jpg" alt="Artwork 12" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.10</div>
+                </a>
+
+                <a href="2026/work_04.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 01">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/4.jpg" alt="Artwork 01" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.13</div>
+                </a>
+
+                <a href="2026/work_05.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 02">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/5.jpg" alt="Artwork 02" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.21</div>
+                </a>
+
+                <a href="2026/work_06.html" class="gallery-card" data-year="2026" data-category="booth" data-title="으아앙 와카사기히메 쿠션">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/6.png" alt="으아앙 와카사기히메 쿠션" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.26</div>
+                </a>
+
+                <a href="2026/work_07.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 107">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/7.png" alt="Artwork 107" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.01.26</div>
+                </a>
+
+                <a href="2026/work_08.html" class="gallery-card" data-year="2026" data-category="booth" data-title="부스 안내">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/8.jpg" alt="부스 안내" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.02.15</div>
+                </a>
+
+                <a href="2026/work_09.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 39">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/9.png" alt="Artwork 39" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.02.17</div>
+                </a>
+
+                <a href="2026/work_10.html" class="gallery-card" data-year="2026" data-category="art" data-title="자유시민님 리퀘스트">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/10.jpg" alt="자유시민님 리퀘스트" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.02.25</div>
+                </a>
+
+                <a href="2026/work_11.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 31">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/11.png" alt="Artwork 31" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.03.02</div>
+                </a>
+
+                <a href="2026/work_12.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 54">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/12.png" alt="Artwork 54" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.03.25</div>
+                </a>
+
+                <a href="2026/work_13.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 11">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/13.jpg" alt="Artwork 11" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.03.26</div>
+                </a>
+
+                <a href="2026/work_14.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 53">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/14.jpg" alt="Artwork 53" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.03.30</div>
+                </a>
+
+                <a href="2026/work_15.html" class="gallery-card" data-year="2026" data-category="art" data-title="표지 일러스트">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/15.jpg" alt="표지 일러스트" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.06.08</div>
+                </a>
+
+                <a href="2026/work_16.html" class="gallery-card" data-year="2026" data-category="art" data-title="Artwork 80">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/16.jpg" alt="Artwork 80" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.07.07</div>
+                </a>
+
+                <a href="2026/work_17.html" class="gallery-card" data-year="2026" data-category="booth" data-title="부스 현수막">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2026/17.png" alt="부스 현수막" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2026.09.10</div>
+                </a>
+                <a href="2025/work_09.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-09">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2025/9.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.09.05</div>
                 </a>
 
-                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_08.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-08">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/8.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/8.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.08.20</div>
                 </a>
 
-                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_07.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-07">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/7.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.07.15</div>
                 </a>
 
-                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_06.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-06">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/6.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/6.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.06.10</div>
                 </a>
 
-                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_05.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-05">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/5.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.05.05</div>
                 </a>
 
-                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_04.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-04">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/4.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.04.01</div>
                 </a>
 
-                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_03.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-03">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/3.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.03.20</div>
                 </a>
 
-                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_02.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-02">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/2.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/2.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.02.15</div>
                 </a>
 
-                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="art">
+                <a href="2025/work_01.html" class="gallery-card" data-year="2025" data-category="art" data-title="Artwork 2025-01">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2025/1.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500'">
+                        <img src="assets/2025/1.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2025.01.10</div>
                 </a>
 
-                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_19.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-19">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/8.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Work'">
+                        <img src="assets/2024/20.jpg" alt="Artwork 2024-19" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.10.28</div>
+                </a>
+
+                <a href="2024/work_18.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-18">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/19.jpg" alt="Artwork 2024-18" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.10.20</div>
+                </a>
+
+                <a href="2024/work_17.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-17">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/18.jpg" alt="Artwork 2024-17" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.10.15</div>
+                </a>
+
+                <a href="2024/work_16.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-16">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/17.jpg" alt="Artwork 2024-16" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.10.05</div>
+                </a>
+
+                <a href="2024/work_15.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-15">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/16.jpg" alt="Artwork 2024-15" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.09.20</div>
+                </a>
+
+                <a href="2024/work_14.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-14">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/15.jpg" alt="Artwork 2024-14" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.09.10</div>
+                </a>
+
+                <a href="2024/work_13.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-13">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/14.jpg" alt="Artwork 2024-13" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.08.15</div>
+                </a>
+
+                <a href="2024/work_12.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-12">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/13.jpg" alt="Artwork 2024-12" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.07.23</div>
+                </a>
+
+                <a href="2024/work_11.html" class="gallery-card" data-year="2024" data-category="art" data-title="潮汕THO 2nd 기념 일러스트">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/11.jpg" alt="潮汕THO 2nd 기념 일러스트" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.03.22</div>
+                </a>
+
+                <a href="2024/work_10.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-10">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/10.png" alt="Artwork 2024-10" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.01.29</div>
+                </a>
+
+                <a href="2024/work_09.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-09">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/9.png" alt="Artwork 2024-09" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
+                    </div>
+                    <div class="card-date">2024.01.23</div>
+                </a>
+
+                <a href="2024/work_08.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-08">
+                    <div class="card-tab"></div>
+                    <div class="card-img-box">
+                        <img src="assets/2024/8.png" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.12.25</div>
                 </a>
 
-                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_07.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-07">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/7.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/7.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_06.html" class="gallery-card" data-year="2024" data-category="3d">
+                <a href="2024/work_06.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-06">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/6.jpg" alt="3D work" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+3D'">
+                        <img src="assets/2024/6.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_05.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-05">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/5.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/5.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_04.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-04">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/4.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/4.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_03.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-03">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/3.jpg" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/3.jpg" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_02.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-02">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/2.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/2.png" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
 
-                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="art">
+                <a href="2024/work_01.html" class="gallery-card" data-year="2024" data-category="art" data-title="Artwork 2024-01">
                     <div class="card-tab"></div>
                     <div class="card-img-box">
-                        <img src="assets/2024/1.png" alt="Art" onerror="this.src='https://via.placeholder.com/300x500/999/fff?text=2024+Original'">
+                        <img src="assets/2024/1.png" alt="Art" onerror="this.onerror=null;this.removeAttribute('src');this.closest('.card-img-box').classList.add('no-image')">
                     </div>
                     <div class="card-date">2024.11.11</div>
                 </a>
             </div>
         </div>
 
-        <div class="pagination-controls">
-            <button id="prevBtn" class="page-arrow-btn" onclick="changePage(-1)">
-                <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button id="nextBtn" class="page-arrow-btn" onclick="changePage(1)">
-                <i class="fa-solid fa-chevron-right"></i>
-            </button>
-        </div>
     </div>
 
     <div id="scroll-top-btn" onclick="scrollToTop()">

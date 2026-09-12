@@ -155,11 +155,17 @@ body {
     color: #000;
 }
 
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
 .focus-filter {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin-bottom: 16px;
 }
 
 .category-filter {
@@ -173,12 +179,21 @@ body {
     border: 1px solid #f2cfa5;
     padding: 5px 20px;
     border-radius: 20px;
-    font-family: 'Fredoka One', cursive;
+    font-family: 'Fredoka One', 'Noto Sans KR', cursive, sans-serif;
+    font-weight: 700;
     font-size: 0.8rem;
     color: #333;
     cursor: pointer;
     text-transform: uppercase;
     transition: all 0.2s;
+}
+
+/* 한글 라벨(그림/부스)은 Fredoka One에 글리프가 없어 Noto Sans KR로 대체되므로
+   영문 라벨과 굵기가 비슷해 보이도록 더 두껍게 설정 */
+.cat-btn[data-filter="art"],
+.cat-btn[data-filter="booth"] {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 900;
 }
 
 .cat-btn.active,
@@ -200,24 +215,136 @@ body {
     color: #6a6a6a;
 }
 
-.gallery-grid {
+/* --- 뷰 전환 토글 --- */
+.view-toggle {
+    display: flex;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.view-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    border: 1px solid #eadfd0;
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #6a6a6a;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.view-btn.active,
+.view-btn:hover {
+    background-color: #f2cfa5;
+    border-color: #f2cfa5;
+    color: #fff;
+}
+
+@media (max-width: 900px) {
+    .filter-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+    .view-toggle {
+        margin-left: 0;
+    }
+}
+
+/* --- 갤러리 그리드: 균일 그리드 뷰 (B) --- */
+.gallery-grid.view-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 220px));
     justify-content: center;
     gap: 30px 18px;
 }
 
-.gallery-card {
+.gallery-grid.view-grid .gallery-card {
     position: relative;
     display: flex;
     flex-direction: column;
     background-color: #f2cfa5;
     padding: 8px 8px 36px 8px;
     border-radius: 12px;
-    text-decoration: none;
-    transition: transform 0.3s;
     margin-top: 15px;
     width: 100%;
+}
+
+.gallery-grid.view-grid .card-tab {
+    display: block;
+}
+
+.gallery-grid.view-grid .card-img-box {
+    width: 100%;
+    aspect-ratio: 3 / 5;
+    background: #fff;
+    border-radius: 8px;
+}
+
+.gallery-grid.view-grid .card-date {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: #000;
+}
+
+/* --- 갤러리 그리드: 모아보기(메이슨리) 뷰 (A) --- */
+.gallery-grid.view-masonry {
+    columns: 3 260px;
+    column-gap: 22px;
+}
+
+.gallery-grid.view-masonry .gallery-card {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #eee;
+    position: relative;
+}
+
+.gallery-grid.view-masonry .card-tab {
+    display: none;
+}
+
+.gallery-grid.view-masonry .card-img-box {
+    width: 100%;
+    aspect-ratio: auto;
+    border-radius: 0;
+}
+
+.gallery-grid.view-masonry .card-date {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: auto;
+    z-index: 2;
+    padding: 28px 14px 12px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, transparent 100%);
+    text-align: left;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 0.82rem;
+    color: #fff;
+}
+
+/* 공통 카드 요소 */
+.gallery-card {
+    position: relative;
+    text-decoration: none;
+    transition: transform 0.3s;
 }
 
 .gallery-card:hover {
@@ -237,10 +364,7 @@ body {
 }
 
 .card-img-box {
-    width: 100%;
-    aspect-ratio: 3 / 5;
     background: #fff;
-    border-radius: 8px;
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -250,51 +374,116 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
-.card-date {
-    position: absolute;
-    bottom: 10px;
-    left: 0;
-    width: 100%;
-    text-align: center;
+.card-img-box.no-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eee;
+    min-height: 200px;
+}
+
+.card-img-box.no-image img {
+    display: none;
+}
+
+.card-img-box.no-image::after {
+    content: "이미지 준비중";
+    font-size: 0.75rem;
+    color: #999;
     font-family: 'Noto Sans KR', sans-serif;
-    font-weight: 700;
-    font-size: 0.92rem;
-    color: #000;
 }
 
-.pagination-controls {
+/* --- 라이트박스 (모아보기에서 이미지를 전체로 보기) --- */
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(10, 8, 6, 0.9);
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 30px;
-    margin-top: 60px;
+    justify-content: center;
+    padding: 40px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s ease;
 }
 
-.page-arrow-btn {
-    background: none;
-    border: 2px solid #ddd;
-    width: 50px;
-    height: 50px;
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-figure {
+    max-width: min(90vw, 900px);
+    max-height: 86vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.lightbox-figure img {
+    max-width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-caption {
+    color: #fff;
+    text-align: center;
+}
+
+.lightbox-caption .lb-title {
+    font-family: 'Fredoka One', 'Noto Sans KR', cursive, sans-serif;
+    font-size: 1.1rem;
+}
+
+.lightbox-caption .lb-date {
+    font-size: 0.85rem;
+    color: #cfcfcf;
+    margin-top: 4px;
+}
+
+.lightbox-close,
+.lightbox-nav {
+    position: absolute;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    color: #fff;
     border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #555;
-    transition: all 0.3s;
+    width: 44px;
+    height: 44px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.2s;
 }
 
-.page-arrow-btn:hover {
-    background-color: #f0f0f0;
-    border-color: #999;
+.lightbox-close:hover,
+.lightbox-nav:hover {
+    background: rgba(255,255,255,0.25);
 }
 
-.page-arrow-btn:disabled {
-    opacity: 0.3;
-    cursor: not-allowed;
+.lightbox-close {
+    top: 24px;
+    right: 24px;
+}
+
+.lightbox-nav.prev { left: 24px; top: 50%; transform: translateY(-50%); }
+.lightbox-nav.next { right: 24px; top: 50%; transform: translateY(-50%); }
+
+@media (max-width: 600px) {
+    .lightbox-nav { width: 36px; height: 36px; }
+    .lightbox-nav.prev { left: 10px; }
+    .lightbox-nav.next { right: 10px; }
+    .lightbox-close { top: 14px; right: 14px; }
 }
 
 .inverted-nav .nav-bar {
@@ -340,10 +529,20 @@ body {
     }
 }
 
+@media (max-width: 900px) {
+    .gallery-grid.view-masonry {
+        columns: 2 220px;
+    }
+}
+
 @media (max-width: 600px) {
-    .gallery-grid {
+    .gallery-grid.view-grid {
         grid-template-columns: repeat(2, minmax(140px, 1fr));
         gap: 24px 14px;
+    }
+
+    .gallery-grid.view-masonry {
+        columns: 1 240px;
     }
 
     .year-btn {
@@ -358,7 +557,7 @@ body {
 }
 
 @media (max-width: 420px) {
-    .gallery-grid {
+    .gallery-grid.view-grid {
         grid-template-columns: repeat(1, minmax(0, 220px));
     }
 }

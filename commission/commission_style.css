@@ -181,6 +181,11 @@ body {
     display: block;
 }
 
+.sample-img.no-image {
+    background: #eee;
+    min-height: 300px;
+}
+
 
 /* --- 3. 흑백 삽화 섹션 --- */
 .bw-section {

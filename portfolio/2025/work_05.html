@@ -15,9 +15,14 @@
 
     <!-- 2. 상세 페이지 전용 CSS (1단계 위: portfolio 폴더) -->
     <link rel="stylesheet" href="../portfolio_detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+
+    <a href="../art.html" class="detail-back-btn">
+        <i class="fa-solid fa-arrow-left"></i> 목록으로
+    </a>
     <!-- 상세 컨텐츠 영역 -->
     <div class="detail-container">
         <div class="detail-wrapper">
@@ -29,20 +34,19 @@
                    root/portfolio/assets/2025/image.jpg 를 불러올 경우
                    -> ../assets/2025/image.jpg
                 -->
-                <img src="../assets/2025/1.jpg" alt="Artwork" class="detail-img" onerror="this.src='https://via.placeholder.com/600x800'">
+                <img src="../assets/2025/5.jpg" alt="Artwork" class="detail-img" onerror="this.onerror=null;this.removeAttribute('src');this.classList.add('no-image')">
             </div>
 
             <!-- 오른쪽: 텍스트 영역 -->
             <div class="detail-text-box">
-                <h1 class="detail-title">ALGL No.1312</h1>
-                <p class="detail-date">2022/8</p>
+                <h1 class="detail-title">Artwork 2025-05</h1>
+                <p class="detail-date">2025/05</p>
 
                 <div class="detail-desc">
-                    이 그림은 ALGL1312 #8 REAL 입니다.
+                    2025년 작업물입니다.
                     <br><br>
-                    학교라는 컨셉을 바탕으로 제작된 작품으로,
-                    건물의 구조와 색감, 조명 등이 조화를 이루어
-                    현실적인 느낌을 줍니다.
+                    추후 실제 작품 설명과 제작 메모로 교체할 수 있도록
+                    기본 구조만 먼저 맞춰 두었습니다.
                 </div>
             </div>
 
