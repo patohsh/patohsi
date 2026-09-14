@@ -1,0 +1,239 @@
+.request-card {
+    background: #fff;
+    border: 1px solid #dfe3f5;
+    border-radius: 26px;
+    padding: 34px;
+    box-shadow: 0 16px 40px rgba(18, 18, 18, 0.08);
+    text-align: left;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* --- 커미션 종류 태그(단일 선택) --- */
+.tag-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.tag-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1.5px solid #dfe3f5;
+    background: #fafbff;
+    color: #333;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tag-chip:hover {
+    border-color: #304ffe;
+    color: #304ffe;
+}
+
+button.tag-chip.active {
+    background: #304ffe;
+    border-color: #304ffe;
+    color: #fff;
+}
+
+.tag-error {
+    display: none;
+    margin-top: 8px;
+    font-size: 0.82rem;
+    color: #e5484d;
+    font-weight: 700;
+}
+
+.form-row.has-error .tag-error {
+    display: block;
+}
+
+.form-row.has-error .tag-group {
+    outline: 2px solid #ffd7d9;
+    outline-offset: 6px;
+    border-radius: 16px;
+}
+
+/* --- 추가 옵션: +버튼과 선택된 칩 --- */
+.addon-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.addon-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1.5px dashed #304ffe;
+    background: #fff;
+    color: #304ffe;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.addon-add-btn:hover {
+    background: #eef1ff;
+}
+
+.addon-selected-group {
+    margin-top: 12px;
+}
+
+.addon-chip {
+    background: #eef1ff;
+    border-color: #c7d0ff;
+    color: #304ffe;
+    cursor: default;
+}
+
+.addon-remove-btn {
+    background: none;
+    border: none;
+    color: #304ffe;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 2px;
+}
+
+.addon-remove-btn:hover {
+    color: #e5484d;
+}
+
+/* --- 신청서 이미지 저장 아래: 결제 섹션 --- */
+.request-payment-divider {
+    height: 1px;
+    background: #e5e5e5;
+    margin: 32px 0 26px;
+}
+
+.request-payment-block .confirm-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.request-payment-block .confirm-copy {
+    margin-bottom: 20px;
+}
+
+.request-payment-block .payment-btn {
+    cursor: pointer;
+    border: none;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* --- 카카오페이 QR 팝업 --- */
+.qr-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-modal.is-hidden {
+    display: none;
+}
+
+.qr-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.55);
+}
+
+.qr-modal-box {
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    border-radius: 24px;
+    padding: 36px 32px;
+    max-width: 340px;
+    width: calc(100% - 40px);
+    text-align: center;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.qr-modal-box h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: #111;
+}
+
+.qr-modal-box p {
+    margin: 0 0 20px;
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.qr-modal-img {
+    width: 220px;
+    height: 220px;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid #eee;
+    background: #fafafa;
+}
+
+.qr-modal-box.qr-no-image .qr-modal-img {
+    display: none;
+}
+
+.qr-modal-box.qr-no-image::after {
+    content: "QR 이미지가 아직 등록되지 않았습니다.";
+    display: block;
+    width: 220px;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 16px;
+    border: 1px dashed #ccc;
+    background: #fafafa;
+    color: #999;
+    font-size: 0.82rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.qr-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: #f2f2f2;
+    color: #555;
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.qr-modal-close:hover {
+    background: #e5e5e5;
+}
+
+@media (max-width: 768px) {
+    .request-card {
+        padding: 24px 20px;
+    }
+}

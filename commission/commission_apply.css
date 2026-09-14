@@ -13,14 +13,31 @@
     color: #4f4f4f;
 }
 
-.back-to-commission {
-    display: inline-block;
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     margin-top: 22px;
+    padding: 10px 20px 10px 16px;
+    border-radius: 999px;
+    border: 1.5px solid #dfe3f5;
+    background: #fff;
     color: #111;
     font-weight: 700;
+    font-size: 0.9rem;
     text-decoration: none;
-    border-bottom: 2px solid #304ffe;
-    padding-bottom: 3px;
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    border-color: #304ffe;
+    color: #304ffe;
+    transform: translateX(-2px);
+}
+
+.back-btn-arrow {
+    font-size: 1rem;
+    line-height: 1;
 }
 
 .apply-method-grid {
@@ -28,6 +45,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
     margin-bottom: 42px;
+    align-items: stretch;
 }
 
 .apply-card,
@@ -38,6 +56,21 @@
     padding: 30px;
     box-shadow: 0 16px 40px rgba(18, 18, 18, 0.08);
     text-align: left;
+}
+
+.apply-method-grid .apply-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.apply-method-grid .apply-card-copy {
+    flex: 1;
+}
+
+.apply-method-grid .apply-action-btn {
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 .apply-card-label {
@@ -99,6 +132,74 @@
     background: #2d2d2d;
 }
 
+/* --- 신청서 폼 (OPTION 02) --- */
+.apply-card-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.request-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 22px;
+    text-align: left;
+}
+
+.form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-row label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    border: 1px solid #dfe3f5;
+    border-radius: 12px;
+    color: #111;
+    background: #fafbff;
+    resize: vertical;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: #304ffe;
+    background: #fff;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.form-hint {
+    margin-top: 14px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.form-hint-success {
+    color: #1a8f4c;
+    font-weight: 700;
+}
+
+.request-canvas-hidden {
+    display: none;
+}
+
 .apply-confirm-section {
     margin-bottom: 38px;
 }
@@ -147,5 +248,13 @@
     .apply-card,
     .confirm-box {
         padding: 24px 20px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .apply-action-btn {
+        width: 100%;
     }
 }

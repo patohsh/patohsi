@@ -36,7 +36,9 @@
                data-en="Choose an application method -> send your email -> proceed to payment. After sending your email, use the confirmation button below to unlock payment.">
                 신청 방식 선택 -> 메일 전송 -> 결제 진행 순서입니다. 메일을 보낸 뒤 아래 확인 버튼을 눌러 결제 링크를 열어 주세요.
             </p>
-            <a href="index.html" class="back-to-commission lang-text" data-ko="커미션 메인으로 돌아가기" data-en="Back to Commission">커미션 메인으로 돌아가기</a>
+            <a href="index.html" class="back-btn lang-text" data-ko="커미션 메인으로 돌아가기" data-en="Back to Commission">
+                <span class="back-btn-arrow">←</span> 커미션 메인으로 돌아가기
+            </a>
         </header>
 
         <section class="apply-method-grid">
@@ -53,48 +55,14 @@
 
             <article class="apply-card">
                 <span class="apply-card-label">OPTION 02</span>
-                <h2 class="apply-card-title lang-text" data-ko="직접 신청 메일 보내기" data-en="Direct Email Request">직접 신청 메일 보내기</h2>
+                <h2 class="apply-card-title lang-text" data-ko="신청서 작성 후 구글 폼 제출" data-en="Fill the Form, then Submit via Google Form">신청서 작성 후 구글 폼 제출</h2>
                 <p class="apply-card-copy lang-text"
-                   data-ko="아래 버튼을 누르면 메일 앱이 열립니다. 제목과 신청 내용을 적어 보낸 뒤, 결제 안내를 위해 아래 확인 버튼을 눌러 주세요."
-                   data-en="The button below opens your mail app. Send your request with subject and details first, then use the confirmation button to unlock payment.">
-                    아래 버튼을 누르면 메일 앱이 열립니다. 제목과 신청 내용을 적어 보낸 뒤, 결제 안내를 위해 아래 확인 버튼을 눌러 주세요.
+                   data-ko="신청서 페이지에서 항목을 작성하고 이미지로 저장한 뒤, 구글 폼에 그 이미지를 업로드해서 제출하는 방식입니다."
+                   data-en="Fill in your request on the request page, save it as an image, then upload that image on the Google Form to submit.">
+                    신청서 페이지에서 항목을 작성하고 이미지로 저장한 뒤, 구글 폼에 그 이미지를 업로드해서 제출하는 방식입니다.
                 </p>
-                <a
-                    href="mailto:aoiusagi1203@gmail.com?subject=%5BCommission%5D%20Application&body=Name%3A%0AContact%3A%0ARequest%20Type%3A%0ACharacter%20Info%3A%0ADeadline%3A%0AReferences%3A%0AAdditional%20Notes%3A"
-                    class="apply-action-btn secondary lang-text"
-                    data-ko="메일로 직접 신청하기"
-                    data-en="Apply by Email"
-                >
-                    메일로 직접 신청하기
-                </a>
+                <a href="request.html" class="apply-action-btn secondary lang-text" data-ko="신청서 작성하러 가기" data-en="Go to Request Form">신청서 작성하러 가기</a>
             </article>
-        </section>
-
-        <section class="apply-confirm-section">
-            <div class="confirm-box">
-                <h2 class="confirm-title lang-text" data-ko="메일 전송 후 결제 열기" data-en="Unlock Payment After Email">메일 전송 후 결제 열기</h2>
-                <p class="confirm-copy lang-text"
-                   data-ko="신청 메일 또는 픽시브 신청을 먼저 끝낸 뒤 아래 버튼을 눌러 주세요. 서버 검증은 없으므로, 실제 신청 후에만 진행하는 흐름으로 사용하면 됩니다."
-                   data-en="Finish your email or Pixiv request first, then use the button below. There is no server-side verification, so use it only after your actual request is sent.">
-                    신청 메일 또는 픽시브 신청을 먼저 끝낸 뒤 아래 버튼을 눌러 주세요. 서버 검증은 없으므로, 실제 신청 후에만 진행하는 흐름으로 사용하면 됩니다.
-                </p>
-                <button type="button" class="unlock-payment-btn lang-text" data-ko="메일을 보냈습니다" data-en="I Sent My Request" onclick="unlockPayment()">메일을 보냈습니다</button>
-            </div>
-        </section>
-
-        <section id="paymentReveal" class="payment-section payment-reveal is-hidden">
-            <h2 class="section-title lang-text" data-ko="결제 진행" data-en="Proceed to Payment">결제 진행</h2>
-            <div class="payment-divider"></div>
-            <div class="payment-grid">
-                <div class="payment-col">
-                    <span class="payment-label">KR</span>
-                    <a href="#" class="payment-btn">Kakao</a>
-                </div>
-                <div class="payment-col">
-                    <span class="payment-label">JP / CH / EN / etc.</span>
-                    <a href="https://paypal.me/patohsi" class="payment-btn" target="_blank" rel="noopener noreferrer">Paypal</a>
-                </div>
-            </div>
         </section>
     </div>
 
@@ -122,6 +90,5 @@
     </div>
 
     <script src="commission_script.js"></script>
-    <script src="commission_apply.js"></script>
 </body>
 </html>
